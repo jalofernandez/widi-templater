@@ -1,6 +1,6 @@
 # CSS generator to customize landing pages
 
-A node based project to compile and generate CSS templates to customize HTML layout to improve landing pages ([Peluquería canina Canessa](http://peluqueriacanessa.com/)). A nodejs (yarn too) project with less.
+A node based project to compile and generate CSS templates to customize HTML layout to improve landing pages ([Widitrade](http://widitrade.com/)). A nodejs (yarn too) project with less.
 
 ## Credits and Dependencies
 

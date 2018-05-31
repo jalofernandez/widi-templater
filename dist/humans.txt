@@ -1,0 +1,7 @@
+# https://www.widitrade.com/humans.txt
+
+/* TEAM */
+    Frontend Designer & Developer: Javier Lorenzo Fernández
+    Twitter: @jalofernandez
+    From: Madrid, Madrid, Spain
+    To: Widitrade, 2018

@@ -1,0 +1,472 @@
+/*
+ * TEMPLATE (main CSS) to Widi-Templater
+ * Mobile first!
+ * Flexbox layout
+ * @jalofernandez (author) to Widitrade
+ */
+/*
+ * _VARS (common) to Widi-Templater
+ * Mobile first!
+ * Flexbox layout
+ * @jalofernandez (author) to Widitrade, 2018
+ */
+/*
+ * _MIXINS (common) to Widi-Templater
+ * Mobile first!
+ * Flexbox layout
+ * @jalofernandez (author) to Widitrade, 2018
+ */
+/* -- Flexbox layout --------------------------------- */
+/* -- Animations & Transitions ---------------------- */
+/* -- Elements Shape & Position ---------------------- */
+/* -- Elements Shape & Position ---------------------- */
+/*
+ * COUNTERDOWN (section) with JS to Widi-Templater
+ * Not mobile first this one :/
+ * Flexbox layout
+ * JS needed
+ * @jalofernandez (author) to Widitrade
+ */
+:root {
+  --bg-color: rgba(232, 92, 89, 0.95);
+  --clock-copy: white;
+  --clock-number: white;
+}
+.js-counterdown {
+  display: inherit;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 60px;
+  width: 100%;
+  z-index: 1;
+}
+/* -- Copies & Numbers -- */
+.clock-copy {
+  display: inline-block;
+  font-family: Poppins;
+  font-size: 20px;
+  color: var(--clock-copy);
+  padding-right: 5px;
+  line-height: 25px;
+  vertical-align: unset;
+}
+.countdown-clock-days,
+.countdown-clock-hours {
+  display: none;
+}
+.clock-number {
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--clock-number);
+}
+#countdown-clock {
+  background-color: rgba(232, 92, 89, 0.95);
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: flex-end;
+  /* TODO: enable the following animation asap!
+  -webkit-animation: colorchange 4s ease-out infinite;
+  animation: colorchange 4s ease-out infinite;
+  */
+}
+#countdown-clock .countdown-clock-title {
+  /*
+    .clock-copy {
+      position: relative;
+      top: 3px;
+    }
+    */
+}
+#countdown-clock .countdown-clock-title .clock-copy:first-child {
+  text-align: center;
+}
+#countdown-clock .countdown-clock-title .clock-copy:last-child {
+  font-size: 16px;
+}
+/* TODO: enable the following animation asap!
+@keyframes colorchange {
+  0%   {background: rgba(232, 92, 89, 0.85);}
+  25%  {background: rgba(232, 92, 89, 0.95);}
+  50%  {background: rgba(232, 92, 89, 1);}
+  75%  {background: rgba(232, 92, 89, 0.95);}
+}
+@-webkit-keyframes colorchange {
+  0%   {background: rgba(232, 92, 89, 0.85);}
+  25%  {background: rgba(232, 92, 89, 0.95);}
+  50%  {background: rgba(232, 92, 89, 1);}
+  75%  {background: rgba(232, 92, 89, 0.95);}
+}
+*/
+/* -- Responsive Behaviour --------------------------------- */
+@media only screen and (max-width: 768px) {
+  .countdown-clock-title.clock-copy {
+    display: flex;
+    flex-flow: column wrap;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /*
+  .clock-copy {
+    font-size: 20px;
+  }
+  .clock-number {
+    font-size: 24px;
+  }
+  */
+}
+/*
+ * PRICING (section) to Widi-Templater
+ * Not mobile first this one :/
+ * Flexbox layout
+ * @jalofernandez (author) to Widitrade
+ */
+:root {
+  --bg-color: #F4F4F4;
+  --title-color: #09bed1;
+  --text-color: #333333;
+  --rating-color: #f8e553;
+  --cta-btn-color: #0dc0ce;
+  --cta-btn-hover: #0baab6;
+}
+.pricing-section {
+  text-align: center;
+}
+.pricing-block {
+  padding: 0;
+}
+.pricing-block .pricing-intro {
+  padding-bottom: 30px;
+}
+.pricing-block .pricing-intro h1 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #111111;
+  line-height: 1.4;
+}
+.pricing-block .pricing-intro p {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #303030;
+  line-height: 1.4;
+}
+.pricing-block .pricing-intro .pricing-intro-stock {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #d71e0c;
+  line-height: 45px;
+  -webkit-animation: colorchange 4s ease-out infinite;
+  animation: colorchange 4s ease-out infinite;
+}
+.pricing-card {
+  /* 01 (pricing card) product Image */
+  /* 02 (pricing card) all product2 details */
+  /* 03 (pricing card) "call to action" BTN */
+}
+.pricing-card .wow {
+  max-width: 400px;
+  padding: 20px 20px 50px 20px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  border: transparent;
+  will-change: transform;
+}
+@media only screen and (min-width: 993px) {
+  .pricing-card .wow:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
+    -webkit-transition: all 250ms ease-in-out;
+    -moz-transition: all 250ms ease-in-out;
+    -ms-transition: all 250ms ease-in-out;
+    -o-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+    transform: scale(1.03);
+  }
+}
+.pricing-card .pricing-promo-pic img {
+  width: 100%;
+}
+.pricing-card .pricing-details {
+  margin: 20px;
+}
+.pricing-card .pricing-details h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #505050;
+  margin: 20px;
+}
+.pricing-card .pricing-details .price {
+  padding: 2px;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: 0;
+}
+.pricing-card .pricing-details .price.price-original {
+  color: #CB4335;
+  text-decoration: line-through;
+}
+.pricing-card .pricing-details .price.price-offer {
+  color: orange;
+  text-decoration: line-through;
+}
+.pricing-card .pricing-details .price.price-current {
+  color: #28B463;
+}
+.pricing-card .pricing-details .price-block .price-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 15px;
+}
+.pricing-card .pricing-details .price-block:not(.custom-offer) {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -webkit-flexbox;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  flex-wrap: wrap;
+  -webkit-flex-direction: space-between;
+  -ms-flex-direction: space-between;
+  justify-content: space-between;
+}
+.pricing-card .pricing-details .price-block.custom-offer {
+  max-width: 250px;
+  margin: 0 auto 20px auto;
+  padding: 3px 5px;
+  background-color: #2ECC71;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  text-align: right;
+  position: relative;
+}
+.pricing-card .pricing-details .price-block.custom-offer .custom-offer-img {
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  left: -20px;
+  bottom: -1px;
+}
+.pricing-card .pricing-details .price-block.custom-offer span {
+  display: block;
+}
+.pricing-card .pricing-details .price-block.custom-offer .price-title {
+  color: rgba(255, 255, 255, 0.9);
+}
+.pricing-card .pricing-details .price-block.custom-offer .price.price-current {
+  color: white;
+}
+.pricing-card .btn-cta {
+  width: 100%;
+}
+.pricing-card .btn-cta .btn {
+  min-width: 100%;
+  /* background-color: #2ECC71; // color by default */
+  background-color: var(--cta-btn-color);
+  color: white;
+  font-weight: bold;
+  will-change: transform;
+}
+.pricing-card .btn-cta .btn:hover {
+  -webkit-transition: all 150ms ease;
+  -moz-transition: all 150ms ease;
+  -ms-transition: all 150ms ease;
+  -o-transition: all 150ms ease;
+  transition: all 150ms ease;
+  background-color: var(--cta-btn-hover);
+}
+/* -- Responsive Behaviour --------------------------------- */
+@media only screen and (min-width: 1200px) {
+  .pricing-card .btn-cta .btn {
+    min-width: 250px;
+  }
+  .pricing-card .pricing-details .price-block.custom-offer .custom-offer-img {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: -11px;
+    bottom: -11px;
+  }
+  .pricing-card .pricing-details .price-block.custom-offer .price.price-current {
+    font-size: 32px;
+  }
+  .pricing-block .pricing-intro .pricing-intro-stock {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .pricing-block .pricing-intro {
+    padding-bottom: 10px !important;
+  }
+  .pricing-block .pricing-intro p {
+    margin-bottom: 0 !important;
+  }
+  .pricing-section {
+    padding-top: 30px !important;
+    padding-bottom: 50px !important;
+  }
+  .pricing-card {
+    width: 100%;
+    /* 01 (pricing card) product Image */
+    /* 02 (pricing card) all product2 details */
+  }
+  .pricing-card .wow {
+    width: 100%;
+    max-width: 380px !important;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -webkit-flexbox;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-flex-direction: center;
+    -ms-flex-direction: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+    padding: 8px !important;
+  }
+  .pricing-card .pricing-promo-pic {
+    width: 33.3333%;
+    margin-right: 10px;
+  }
+  .pricing-card .pricing-details {
+    width: calc(66.6666% - 10px);
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    margin: 0;
+    /* 03 (pricing card) "call to action" BTN */
+  }
+  .pricing-card .pricing-details h2 {
+    margin: 5px 0 !important;
+  }
+  .pricing-card .pricing-details br,
+  .pricing-card .pricing-details ul {
+    display: none;
+  }
+  .pricing-card .pricing-details .price {
+    font-size: 18px !important;
+  }
+  .pricing-card .pricing-details .price-block:not(.custom-offer) {
+    width: 100%;
+    margin-top: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -webkit-flexbox;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-flex-direction: space-between;
+    -ms-flex-direction: space-between;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .pricing-card .pricing-details .price-block.custom-offer {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    max-width: inherit;
+  }
+  .pricing-card .pricing-details .price-block.custom-offer .custom-offer-img {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: -12px;
+    bottom: -1px;
+  }
+  .pricing-card .pricing-details .price-block.custom-offer .price.price-current {
+    font-weight: bold;
+    position: relative;
+    right: -3px;
+  }
+  .pricing-card .pricing-details .btn-cta {
+    margin-top: 10px;
+  }
+  .pricing-card .pricing-details .btn-cta .btn {
+    min-width: 100%;
+  }
+  .pricing-card.select .btn-cta {
+    margin-top: 10px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .pricing-block .pricing-intro h1 {
+    font-size: 22px !important;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .pricing-block .pricing-intro p {
+    font-size: 13px !important;
+  }
+  .pricing-card .pricing-promo-pic {
+    width: 25%;
+  }
+  .pricing-card .pricing-details {
+    width: calc(75% - 10px);
+  }
+}
+@keyframes colorchange {
+  0% {
+    color: #d71e0c;
+  }
+  25% {
+    color: #f56253;
+  }
+  50% {
+    color: #d71e0c;
+  }
+  75% {
+    color: #a71709;
+  }
+}
+@-webkit-keyframes colorchange {
+  0% {
+    color: #d71e0c;
+  }
+  25% {
+    color: #f56253;
+  }
+  50% {
+    color: #d71e0c;
+  }
+  75% {
+    color: #a71709;
+  }
+}

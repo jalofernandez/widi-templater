@@ -1,0 +1,115 @@
+/*
+ * COUNTERDOWN (section) with JS to Widi-Templater
+ * Not mobile first this one :/
+ * Flexbox layout
+ * JS needed
+ * @jalofernandez (author) to Widitrade
+ */
+
+@import (reference) '../_vars';
+@import (reference) '../_mixins';
+
+&:root {
+  --bg-color:     rgba(232, 92, 89, 0.95);
+ 	--clock-copy:   @color-white;
+ 	--clock-number: @color-white;
+}
+
+.js-counterdown {
+  display: inherit;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 60px;
+  width: 100%;
+  z-index: 1;
+}
+
+/* -- Copies & Numbers -- */
+.clock-copy {
+  display: inline-block;
+  font-family: Poppins;
+  //font-size: 16px;
+  font-size: 20px;
+  color: var(--clock-copy);
+  padding-right: 5px;
+  line-height: 25px;
+  vertical-align: unset;
+}
+.countdown-clock-days,
+.countdown-clock-hours {
+  display: none;
+}
+.clock-number {
+  font-family: Poppins;
+  //font-size: 18px;
+  .text(24px, 600, .02em);
+  color: var(--clock-number);
+}
+
+#countdown-clock {
+  background-color: rgba(232, 92, 89, 0.95);
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: flex-end;
+  /* TODO: enable the following animation asap!
+  -webkit-animation: colorchange 4s ease-out infinite;
+  animation: colorchange 4s ease-out infinite;
+  */
+
+  .countdown-clock-title {
+    .clock-copy {
+      &:first-child {
+        text-align: center;
+      }
+      &:last-child {
+        font-size: 16px;
+      }
+    }
+    /*
+    .clock-copy {
+      position: relative;
+      top: 3px;
+    }
+    */
+  }
+  .countdown-clock-days {
+
+  }
+}
+
+/* TODO: enable the following animation asap!
+@keyframes colorchange {
+  0%   {background: rgba(232, 92, 89, 0.85);}
+  25%  {background: rgba(232, 92, 89, 0.95);}
+  50%  {background: rgba(232, 92, 89, 1);}
+  75%  {background: rgba(232, 92, 89, 0.95);}
+}
+@-webkit-keyframes colorchange {
+  0%   {background: rgba(232, 92, 89, 0.85);}
+  25%  {background: rgba(232, 92, 89, 0.95);}
+  50%  {background: rgba(232, 92, 89, 1);}
+  75%  {background: rgba(232, 92, 89, 0.95);}
+}
+*/
+
+/* -- Responsive Behaviour --------------------------------- */
+@media only screen and (max-width: 768px) {
+  .countdown-clock-title.clock-copy {
+    display: flex;
+    flex-flow: column wrap;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /*
+  .clock-copy {
+    font-size: 20px;
+  }
+  .clock-number {
+    font-size: 24px;
+  }
+  */
+}

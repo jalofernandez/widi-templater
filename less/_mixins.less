@@ -1,0 +1,101 @@
+/*
+ * _MIXINS (common) to Widi-Templater
+ * Mobile first!
+ * Flexbox layout
+ * @jalofernandez (author) to Widitrade, 2018
+ */
+
+@import (reference) '_vars';
+
+/* -- Flexbox layout --------------------------------- */
+
+.flexbox(@direction: row, @wrap: wrap, @content: center) {
+  display: -webkit-box;
+	display: -webkit-flex;
+	display: -webkit-flexbox;
+  display:-moz-flex;
+  display:-moz-box;
+	display: -ms-flexbox;
+	display: flex;
+  -webkit-flex-direction: @direction;
+	-ms-flex-direction: @direction;
+  flex-direction: @direction;
+  flex-wrap: @wrap;
+  -webkit-flex-direction: @content;
+  -ms-flex-direction: @content;
+  justify-content: @content;
+}
+
+.flex(@wrap: wrap) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -webkit-flexbox;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: @wrap;
+}
+.flex-direction(@direction: row) {
+  -webkit-flex-direction: @direction;
+  -ms-flex-direction: @direction;
+  flex-direction: @direction;
+}
+.justify-content(@content: center) {
+  -webkit-flex-direction: @content;
+  -ms-flex-direction: @content;
+  justify-content: @content;
+}
+
+/* -- Animations & Transitions ---------------------- */
+
+.anim(@type: all, @time: 150ms, @long: ease-in-out) {
+  -webkit-transition: @type @time @long;
+  -moz-transition: @type @time @long;
+  -ms-transition: @type @time @long;
+  -o-transition: @type @time @long;
+  transition: @type @time @long;
+}
+
+.scale(@scale) {
+  -webkit-transform: scale(@scale);
+  -moz-transform: scale(@scale);
+  -ms-transform: scale(@scale);
+  -o-transform: scale(@scale);
+  transform: scale(@scale);
+}
+
+/* -- Elements Shape & Position ---------------------- */
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.centered(@left: 50%) {
+  position: relative;
+  left: @left;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+/* -- Elements Shape & Position ---------------------- */
+
+.text(@size, @weight, @space) {
+  font-size: @size;
+  font-weight: @weight;
+  letter-spacing: @space;
+}
+
+.paragraph(@color: @color-text, @weight: 400) {
+  font-family: 'Roboto', sans-serif;
+  .main-text(18px, @weight, 0.02em);
+  color: @color;
+  line-height: 25px;
+  .anim(all, 150ms, ease);
+}
