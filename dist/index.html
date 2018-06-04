@@ -23,25 +23,6 @@
         <link rel="shortcut icon" href="https://cdn.widitrade.com/favicon.ico">
         <link rel="icon" type="image/x-icon" href="https://cdn.widitrade.com/favicon.ico" />
 
-         <style>
-            .product .feature-sub {background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url(https://assets.widitrade.com/assets/products/5b0d13b5ef286417795efcf2/slider.png);}
-            .feature-sub .sub-inner h1 {padding: 15px;color: black}
-            .footer {background-color: #F3F3F3; width: 100%; height: 100%; overflow: hidden; /* padding-top: 75px; */ padding-bottom: 20px;}
-            #inferior {width:1px;height:1px;}
-            /*
-            .hero-section {background-image: url("{{ asset('products/5b0d13b5ef286417795efcf2/fondo-sup.png', 'assets') }}"); background-position: center center; background-attachment: fixed; background-size: cover;}
-            */
-            .hero-section {background-image: url("https://assets.widitrade.com/products/5b0d13b5ef286417795efcf2/fondo-sup.png"); background-position: center center; background-attachment: fixed; background-size: cover;}
-            .btn:active.focus, .btn:active:focus, .btn:focus {outline: none;}
-            .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus {border-color: transparent !important;}
-            #inferior {display: none}
-
-            @media only screen and (max-width: 600px) {
-              #inferior {display:inline;color: #FFF;text-align:center; padding-top:15px;position:fixed; left:0px; right:0px;bottom:0px;height:50px;z-index:0; min-width:100%;background-color:#ABEBC6; min-width: 100%;
-              background-color: #ABEBC6;font-family: Poppins;}
-             }
-          </style>
-
           <link href="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
           <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500" rel="stylesheet" type="text/css">
           <link rel="stylesheet" href="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/animate.css"> <!-- Resource style -->
@@ -49,9 +30,31 @@
           <link rel="stylesheet" href="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/owl.theme.css">
           <link href="https://assets.widitrade.com/assets/templates/5b0be71cef2864789d7c8312/style-v143.css" rel="stylesheet" type="text/css" media="all" />
           <!-- custom CSS (stylesheets) -->
+          <!-- TODO: remove the following external link
           <link href="https://unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css" rel="stylesheet" type="text/css" media="all"/>
-          <link href="css/main.css" rel="stylesheet" type="text/css" media="all"/>
+          -->
+          <link href="css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
           <!-- end of custom CSS -->
+          <style>
+             .product .feature-sub {background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url(https://assets.widitrade.com/assets/products/5b0d13b5ef286417795efcf2/slider.png);}
+             .feature-sub .sub-inner h1 {padding: 15px;color: black}
+             .footer {background-color: #F3F3F3; width: 100%; height: 100%; overflow: hidden; /* padding-top: 75px; */ padding-bottom: 20px;}
+             #inferior {width:1px;height:1px;}
+             .back-to-top i {left: 10px; top: 5px;}
+             /*
+             .hero-section {background-image: url("{{ asset('products/5b0d13b5ef286417795efcf2/fondo-sup.png', 'assets') }}"); background-position: center center; background-attachment: fixed; background-size: cover;}
+             */
+             .hero-section {background-image: url("https://assets.widitrade.com/products/5b0d13b5ef286417795efcf2/fondo-sup.png"); background-position: center center; background-attachment: fixed; background-size: cover;}
+             .btn:active.focus, .btn:active:focus, .btn:focus {outline: none;}
+             .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus {border-color: transparent !important;}
+             #inferior {display: none}
+
+             @media only screen and (max-width: 600px) {
+               #inferior {display:inline;color: #FFF;text-align:center; padding-top:15px;position:fixed; left:0px; right:0px;bottom:0px;height:50px;z-index:0; min-width:100%;background-color:#ABEBC6; min-width: 100%;
+               background-color: #ABEBC6;font-family: Poppins;}
+              }
+           </style>
+
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114649251-1"></script>
           <script>
               window.dataLayer = window.dataLayer || [];
@@ -378,7 +381,7 @@
 
     <!-- Scroll To Top -->
      <a id="back-top" class="back-to-top page-scroll" href="#main">
-       <i class="ion-ios-arrow-thin-up"></i>
+       <i class="ion-md-arrow-round-up"></i>
      </a>
     <!-- END Scroll To Top -->
 

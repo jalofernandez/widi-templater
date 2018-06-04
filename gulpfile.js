@@ -52,7 +52,7 @@ gulp.task('css', function() {
  */
 gulp.task('mincss', function () {
     gulp.src('./css/sources/*.css')
-        .pipe(concat('main.css'))
+        .pipe(concat('main.min.css'))
         .pipe(minifycss())
         .pipe(gulp.dest('./dist/css'))
 });

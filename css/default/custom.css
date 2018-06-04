@@ -470,3 +470,174 @@
     color: #a71709;
   }
 }
+/*
+ * REVIEWS (section) with JS to Widi-Templater
+ * Mobile first!
+ * Flexbox layout
+ * Owl Carousel (dependency)
+ * @jalofernandez (author) to Widitrade
+ */
+:root {
+  --bg-color: #F4F4F4;
+  --title-color: #09bed1;
+  --text-color: #333333;
+  --rating-color: #f8e553;
+}
+.review-section {
+  padding: 60px 0 60px 0;
+  text-align: center;
+  background: var(--bg-color);
+}
+.review-single {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -webkit-flexbox;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-direction: center;
+  -ms-flex-direction: center;
+  justify-content: center;
+}
+.review-single .review-img img {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  opacity: .5;
+}
+.review-single .review-copies {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -webkit-flexbox;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  -webkit-flex-direction: center;
+  -ms-flex-direction: center;
+  justify-content: center;
+}
+.review-username {
+  order: 1;
+}
+.review-description {
+  order: 3;
+}
+.review-rating {
+  order: 2;
+}
+.review-username p {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-family: Poppins;
+  color: var(--title-color);
+  line-height: 30px;
+}
+.review-username p span {
+  font-style: italic;
+  opacity: .8;
+}
+.review-description p {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--text-color);
+  line-height: 25px;
+  position: relative;
+}
+.review-description p i {
+  display: none;
+}
+.review-rating {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -webkit-flexbox;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-direction: center;
+  -ms-flex-direction: center;
+  justify-content: center;
+  line-height: 50px;
+}
+.review-rating .icon {
+  min-width: 30px;
+  font-size: 24px;
+  font-weight: 100;
+  color: var(--rating-color);
+}
+/* -- Responsive Behaviour --------------------------------- */
+@media only screen and (min-width: 601px) {
+  .review-single {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .review-single .review-img {
+    margin-right: 20px;
+  }
+  .review-single .review-copies {
+    text-align: left;
+    max-width: 500px;
+  }
+  .review-rating {
+    justify-content: start;
+  }
+}
+/*
+ * TODO: disabled code by the moment!
+ * to enable "quotes" Icons just after and before each paragraph
+ *
+.review-single .review-description p i {
+  font-size: 30px;
+  font-weight: 600;
+  color: #eeeeee;
+}
+.review-single .review-description p i:first-child::before {
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+*/
+/* -- Boostrap (framework) overwrittes to avoid some layout bugs! -- */
+@media (min-width: 768px) and (max-width: 992px) {
+  .navbar-brand {
+    padding-right: 0;
+  }
+  .nav > li > a {
+    padding: 10px 8px;
+    top: 5px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .navbar-default .navbar-collapse {
+    text-align: center;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #e7e7e7;
+  }
+  .navbar-default .navbar-nav > li > a {
+    margin-top: 10px;
+  }
+}
