@@ -1,0 +1,370 @@
+{% extends 'store/baseLayout.html.twig' %}
+{% form_theme form 'store/fields.html.twig' %}
+{% block meta %}
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <meta name="description" content="">
+ <meta name="author" content="">
+{% endblock %}
+{% block stylesheets %}
+ <style>
+  .product .feature-sub {background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url({{ asset('products/'~product.id~'/slider.png', 'assets') }});}
+  .feature-sub .sub-inner h1 {padding: 15px;color: black}
+  .review-section {padding: 60px 0 60px 0;}
+  .footer {background-color: #F3F3F3; width: 100%; height: 100%; overflow: hidden; /* padding-top: 75px; */ padding-bottom: 20px;}
+  #inferior {width:1px;height:1px;}
+  .hero-section {background-image: url("{{ asset('products/5b0d13b5ef286417795efcf2/fondo-sup.png', 'assets') }}"); background-position: center center; background-attachment: fixed; background-size: cover;}
+  .btn:active.focus, .btn:active:focus, .btn:focus {outline: none;}
+  .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus {border-color: transparent !important;}
+  #inferior {display: none}
+
+  .pricing-block .pricing-intro .pricing-intro-stock {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #d71e0c;
+      line-height: 45px;
+      -webkit-animation: colorchange 4s ease-out infinite;
+      animation: colorchange 4s ease-out infinite;
+    }
+
+  @media only screen and (max-width: 600px) {
+    #inferior {display:inline;color: #FFF;text-align:center; padding-top:15px;position:fixed; left:0px; right:0px;bottom:0px;height:50px;z-index:0; min-width:100%;background-color:#ABEBC6; min-width: 100%;
+    background-color: #ABEBC6;font-family: Poppins;}
+   }
+   @media only screen and (max-width: 375px) {
+      .pricing-block .pricing-intro p {font-size: 13px !important;}
+    }
+    @keyframes colorchange {
+      0% {color: #d71e0c;}
+      25% {color: #f56253;}
+      50% {color: #d71e0c;}
+      75% {color: #a71709;}
+    }
+    @-webkit-keyframes colorchange {
+      0% {color: #d71e0c;}
+      25% {color: #f56253;}
+      50% {color: #d71e0c;}
+      75% {color: #a71709;}
+    }
+  </style>
+  <link href="{{ asset('templates/5a993f262fcedb3573291551/bootstrap.min.css', 'assets') }}" rel="stylesheet" type="text/css" media="all" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{{ asset('templates/5a993f262fcedb3573291551/animate.css', 'assets') }}"> <!-- Resource style -->
+  <link rel="stylesheet" href="{{ asset('templates/5a993f262fcedb3573291551/owl.carousel.css', 'assets') }}">
+  <link rel="stylesheet" href="{{ asset('templates/5a993f262fcedb3573291551/owl.theme.css', 'assets') }}">
+  <link rel="stylesheet" href="{{ asset('templates/5ad4a29a2fcedb4f9f7cb7d4/ionicons.min.css', 'assets') }}"> <!-- Resource style -->
+  <link href="{{ asset('templates/'~template.id~'/style-v143.css', 'assets') }}" rel="stylesheet" type="text/css" media="all" />
+  <link href="{{ asset('templates/5b126536ef286460e11a90b4/main.css', 'assets') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+{% block body %}
+  <div class="wrapper">
+    <div class="container">
+     <nav class="navbar navbar-default navbar-fixed-top">
+     <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+     <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+       <span class="sr-only">Toggle navigation</span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand page-scroll" href="#main"><img src="{{ asset('products/'~product.id~'/3party-logo.png', 'assets') }}" height="50" alt="{{ product.name }}" /></a>
+       </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+       <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a class="page-scroll" href="#main">{{ template|templateText('menu1')}}</a></li>
+          <li><a class="page-scroll" href="#features">{{ template|templateText('menu2')}}</a></li>
+          <li><a class="page-scroll" href="#review-section">{{ template|templateText('menu3')}}</a></li>
+          <li><a class="page-scroll" href="#pricing">{{ template|templateText('menu4')}}</a></li>
+          <li><a class="page-scroll" href="#contact">{{ template|templateText('menu5')}}</a></li>
+        </ul>
+      </div>
+     </div>
+    </nav><!-- /.navbar-collapse -->
+   </div><!-- /.container-fluid -->
+  <div class="main product" id="main"><!-- Main Section-->
+   <div class="hero-section">
+    <div class="container nopadding">
+     <div class="col-md-6">
+      <img class="img-responsive wow fadeIn" src="{{ asset('products/'~product.id~'/product1.png', 'assets') }}" alt="{{ product.name }}" />
+     </div>
+     <div class="col-md-6">
+      <div class="hero-content">
+       <h1 class="wow fadeInUp" data-wow-delay="0s">{{ product|resourceText('web1')|raw}}</h1>
+       <p class="wow fadeInUp" data-wow-delay="0.2s">
+       {{ product|resourceText('web2')|raw}}
+       </p>
+       <a class="btn btn-action wow fadeInDown" data-wow-delay="0.2s" href="#js-cta-scroll">{{ template|templateText('buynow')}}</a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="about text-center">
+    <div class="container">
+     <div class="about-content">
+      <h2 class="wow fadeInUp" data-wow-delay="0.1s">"{{ product|resourceText('web3')|raw}}"
+      </h2>
+     </div>
+    </div>
+   </div>
+
+   <div id="features" class="features">
+    <div class="container">
+     <div class="features-inner">
+      <div class="col-md-6">
+       <img class="img-responsive wow fadeIn" src="{{ asset('products/'~product.id~'/product2.png', 'assets') }}" alt="Features" />
+      </div>
+      <div class="col-md-6">
+       <div class="features-list">
+        <h1 class="wow fadeInUp" data-wow-delay="0.1s">{{ template|templateText('espece')}}</h1>
+        <ul class="wow fadeInUp" data-wow-delay="0.2s">
+         <li>{{ product|resourceText('webli1')|raw}}</li>
+         <li>{{ product|resourceText('webli2')|raw}}</li>
+         <li>{{ product|resourceText('webli3')|raw}}</li>
+         <li>{{ product|resourceText('webli4')|raw}}</li>
+         <li>{{ product|resourceText('webli5')|raw}}</li>
+         <li>{{ product|resourceText('webli6')|raw}}</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+
+   <div class="feature-sub">
+    <div class="container">
+     <div class="sub-inner">
+      <h1 class="wow fadeInUp" data-wow-delay="0.1s">{{ product|resourceText('web4')|raw}}</h1>
+      <a href="#js-cta-scroll" class="btn btn-action fadeIn">{{ template|templateText('buynow')}}</a>
+     </div>
+    </div>
+   </div>
+
+   <div id="review-section" class="review-section">
+    <div class="container">
+     <div class="col-md-10 col-md-offset-1">
+      <div class="reviews owl-carousel owl-theme">
+       <div class="review-single">
+        <div class="review-text wow fadeInUp" data-wow-delay="0.2s">
+         <p>{{ product|resourceText('review1')|raw}}</p>
+         <i class="ion ion-star"></i>
+         <i class="ion ion-star"></i>
+        </div>
+       </div>
+       <div class="review-single">
+        <div class="review-text">
+         <p>{{ product|resourceText('review2')|raw}} </p>
+         <i class="ion ion-star"></i>
+         <i class="ion ion-star"></i>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+
+   <div id="js-cta-scroll" class="js-counterdown">
+       <div id="countdown-clock">
+         <div class="countdown-clock-title clock-copy">
+           <div class="clock-copy">¡Descuento aplicado!</div>
+           <div class="clock-copy">Tu descuento caducará en:</div>
+         </div>
+         <div class="countdown-clock-days">
+           <span class="days clock-number"></span>
+           <div class="clock-copy">d</div>
+         </div>
+         <div class="countdown-clock-hours">
+           <span class="hours clock-number"></span>
+           <div class="clock-copy">h</div>
+         </div>
+         <div class="countdown-clock-minutes">
+           <span class="minutes clock-number"></span>
+           <div class="clock-copy">m</div>
+         </div>
+         <div class="countdown-clock-seconds">
+           <span class="seconds clock-number"></span>
+           <div class="clock-copy">s</div>
+         </div>
+       </div>
+    </div>
+
+   <div id="pricing" class="pricing-section">
+    <div class="container">
+     <div class="col-sm-12 pricing-block">
+
+      <div class="pricing-intro">
+       <h1 class="wow fadeInUp" data-wow-delay="0s">{{ template|templateText('promotext')}}.</h1>
+       <p class="wow fadeInUp" data-wow-delay="0.2s">{{ template|templateText('promotext2')}}</p>
+       <h3 class="pricing-intro-stock wow fadeInUp" data-wow-delay="0.3s">{{ template|templateText('stockunits')|raw}}</h3>
+      </div>
+
+      <div class="col-sm-4 pricing-card">
+        <div class="table-left wow fadeInUp" data-wow-delay="0.4s">
+            <div class="pricing-promo-pic">
+                <img src="{{ asset('products/'~product.id~'/img-pack2.png', 'assets') }}" width="100%" />
+            </div>
+            <div class="pricing-details">
+                  <h2>{{ template|templateText('1unite')|raw}}</h2>
+                  <div class="price-block">
+                    <span class="price-title">{{ template|templateText('priceoffer')|raw}}</span>
+                    <span class="price price-current">{{ template|templateText('price2')|replace({'%product%': product.name, '%price1%': (product.matchedPrice(2).value * 2 )~' '~product.matchedPrice(2).currency, '%price_unit%': product.matchedPrice(2).value ~' '~product.matchedPrice(1).currency})|raw}}</span>
+                  </div>
+                  <div class="price-block">
+                    <span class="price-title">{{ template|templateText('priceoriginal')|raw}}</span>
+                    <span class="price price-original">{{ template|templateText('price1')|replace({'%product%': product.name, '%price1%': (product.matchedPrice(2).value * 1 )~' '~product.matchedPrice(2).currency, '%price_unit%': product.matchedPrice(1).value ~' '~product.matchedPrice(1).currency})|raw}}</span>
+                  </div>
+              </div>
+            <a class="btn-cta" href="{{ path('store_checkout', {'id': product.id, 'qty': 2}) }}">
+                <button class="btn btn-primary btn-action btn-fill">{{ template|templateText('buynow')}}</button>
+            </a>
+        </div>
+      </div>
+
+      <div class="col-sm-4 pricing-card select" id="linkselect">
+        <div class="table-right table-center wow fadeInUp" data-wow-delay="0.6s">
+            <div class="pricing-promo-pic">
+                <img src="{{ asset('products/'~product.id~'/img-pack1.png', 'assets') }}"/>
+            </div>
+            <div class="pricing-details">
+                <h2>{{ template|templateText('2unite')|raw}}</h2>
+                <div class="price-block custom-offer">
+                    <img class="custom-offer-img" src="{{ asset('templates/5b126536ef286460e11a90b4/oferta-personal.svg', 'assets') }}"/>
+                    <span class="price-title">{{ template|templateText('customoffer')|raw}}</span>
+                    <span class="price price-current">{{ template|templateText('price2')|replace({'%product%': product.name, '%price1%': (product.matchedPrice(1).value * 2 )~' '~product.matchedPrice(1).currency, '%price_unit%': product.matchedPrice(1).value ~' '~product.matchedPrice(1).currency})|raw}}</span>
+                  </div>
+                  <div class="price-block">
+                    <span class="price-title">{{ template|templateText('priceoffer')|raw}}</span>
+                    <span class="price price-offer">49.99 EUR</span>
+                  </div>
+                  <div class="price-block">
+                    <span class="price-title">{{ template|templateText('priceoriginal')|raw}}</span>
+                    <span class="price price-original">{{ template|templateText('price1')|replace({'%product%': product.name, '%price1%': (product.matchedPrice(1).value * 1 )~' '~product.matchedPrice(1).currency, '%price_unit%': product.matchedPrice(1).value ~' '~product.matchedPrice(1).currency})|raw}}</span>
+                </div>
+            </div>
+            <a class="btn-cta" href="{{ path('store_checkout', {'id': product.id, 'qty': 1}) }}">
+                <button class="btn btn-primary btn-action btn-fill">{{ template|templateText('buynow')}}</button>
+            </a>
+       </div>
+      </div>
+
+      <div class="col-sm-4 pricing-card">
+       <div class="table-right wow fadeInUp" data-wow-delay="0.6s">
+        <div class="pricing-promo-pic">
+            <img src="{{ asset('products/'~product.id~'/img-pack3.png', 'assets') }}"/>
+        </div>
+        <div class="pricing-details">
+          <h2>{{ template|templateText('3unite')|raw}}</h2>
+          <div class="price-block">
+              <span class="price-title">{{ template|templateText('priceoffer')|raw}}</span>
+              <span class="price price-current">{{ template|templateText('price1')|replace({'%product%': product.name, '%price1%': (product.matchedPrice(3).value * 1 )~' '~product.matchedPrice(3).currency, '%price_unit%': product.matchedPrice(1).value ~' '~product.matchedPrice(1).currency})|raw}}</span>
+            </div>
+            <div class="price-block">
+              <span class="price-title">{{ template|templateText('priceoriginal')|raw}}</span>
+              <span class="price price-original">{{ template|templateText('price2')|replace({'%product%': product.name, '%price1%': (product.matchedPrice(3).value * 2 )~' '~product.matchedPrice(3).currency, '%price_unit%': product.matchedPrice(1).value ~' '~product.matchedPrice(1).currency})|raw}}</span>
+          </div>
+        </div>
+        <a class="btn-cta" href="{{ path('store_checkout', {'id': product.id, 'qty': 3}) }}">
+            <button class="btn btn-primary btn-action btn-fill">{{ template|templateText('buynow')}}</button>
+        </a>
+       </div>
+      </div>
+
+     </div>
+    </div>
+   </div>
+
+ <!--security transaction -->
+    <div class="footer">
+     <div class="container">
+      <div class="col-md-6" style="text-align:center">
+        <img src="https://assets.widitrade.com/assets/templates/5a8c33c02fcedb71ba18f811/gadget-guarantee.png" align="center" />
+        <p>
+         {{ template|templateText('guarantee')|raw }}
+        </p>
+      </div>
+      <div class="col-md-6">
+       <div class="container">
+      <div class="col-md-6" style="text-align:center">
+        <img src="https://assets.widitrade.com/assets/templates/5a8c33c02fcedb71ba18f811/gadget-lock.png" align="center" />
+        <p>
+         {{ template|templateText('transaction')|raw}}
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div >
+     <div class="container" style="text-align:center;">
+      {% include 'store/includes/footer.html.twig' %}
+     </div>
+    </div>
+
+     <div id="inferior">
+        <a href="#js-cta-scroll" style="width:100%; height:100%; font-size:20px;font-family: Poppins; text-decoration: none;color: black;">{{ template|templateText('buynow')}} >></a>
+     </div>
+
+    <!-- Scroll To Top -->
+     <a id="back-top" class="back-to-top page-scroll" href="#main">
+       <i class="ion-ios-arrow-thin-up"></i>
+     </a>
+    <!-- Scroll To Top Ends-->
+  </div><!-- Main Section -->
+ </div><!-- Wrapper-->
+ {% endblock %}
+
+{% block javascripts%}
+ <script type="text/javascript">
+    function getTimeRemaining(endtime) {
+      var t = Date.parse(endtime) - Date.parse(new Date());
+      var seconds = Math.floor((t / 1000) % 60);
+      var minutes = Math.floor((t / 1000 / 60) % 60);
+      var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+      var days = Math.floor(t / (1000 * 60 * 60 * 24));
+      return {
+        'total': t,
+        'days': days,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+      };
+     }
+
+     function initializeClock(id, endtime) {
+      var clock = document.getElementById(id);
+      var daysSpan = clock.querySelector('.days');
+      var hoursSpan = clock.querySelector('.hours');
+      var minutesSpan = clock.querySelector('.minutes');
+      var secondsSpan = clock.querySelector('.seconds');
+
+      function updateClock() {
+        var t = getTimeRemaining(endtime);
+
+        daysSpan.innerHTML = t.days;
+        hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+        if (t.total <= 0) {
+          clearInterval(timeinterval);
+        }
+      }
+
+      updateClock();
+      var timeinterval = setInterval(updateClock, 1000);
+     }
+
+     var deadline = new Date(Date.parse(new Date()) + 1 * 1 * 29 * 60 * 1000);
+     initializeClock('countdown-clock', deadline);
+ </script>
+ <script type="text/javascript" src="{{ asset('templates/5a993f262fcedb3573291551/jquery-2.1.1.js', 'assets') }}"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+ <script type="text/javascript" src="{{ asset('templates/5a993f262fcedb3573291551/bootstrap.min.js', 'assets') }}"></script>
+ <script type="text/javascript" src="{{ asset('templates/5a993f262fcedb3573291551/plugins.js', 'assets') }}"></script>
+ <script type="text/javascript" src="{{ asset('templates/5a993f262fcedb3573291551/menu.js', 'assets') }}"></script>
+ <script type="text/javascript" src="{{ asset('templates/5a993f262fcedb3573291551/custom.js', 'assets') }}"></script>
+{% endblock %}

@@ -11,13 +11,29 @@
 @import 'sections/_counter-down';
 @import 'sections/_pricing-section';
 @import 'sections/_review-section';
+@import 'sections/_cta-btn-section';
 
 /* -- Boostrap (framework) overwrittes to avoid some layout bugs! -- */
 @media (min-width: 768px) and (max-width: 992px) {
-  .navbar-brand {padding-right: 0;}
-  .nav>li>a {padding: 10px 8px; top: 5px;}
+  .navbar-brand { padding-right: 0; }
+  .nav > li > a {
+    padding: 10px 8px;
+    top: 5px;
+  }
 }
 @media only screen and (max-width: 767px) {
-  .navbar-default .navbar-collapse {text-align: center;background-color: #FFFFFF;border-bottom: 1px solid #e7e7e7;}
-  .navbar-default .navbar-nav > li> a {margin-top: 10px;}
+  .navbar-default {
+    .navbar-collapse {
+      text-align: center;
+      background-color: @color-white;
+      border-bottom: 1px solid #e7e7e7;
+    }
+    .navbar-nav > li > a { margin-top: 10px; }
+  }
+}
+
+// (common) BTNs
+.btn-action {
+  background-color: @main-color;
+  color: @color-white;
 }

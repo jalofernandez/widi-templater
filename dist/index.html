@@ -39,7 +39,6 @@
              .product .feature-sub {background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url(https://assets.widitrade.com/assets/products/5b0d13b5ef286417795efcf2/slider.png);}
              .feature-sub .sub-inner h1 {padding: 15px;color: black}
              .footer {background-color: #F3F3F3; width: 100%; height: 100%; overflow: hidden; /* padding-top: 75px; */ padding-bottom: 20px;}
-             #inferior {width:1px;height:1px;}
              .back-to-top i {left: 10px; top: 5px;}
              /*
              .hero-section {background-image: url("{{ asset('products/5b0d13b5ef286417795efcf2/fondo-sup.png', 'assets') }}"); background-position: center center; background-attachment: fixed; background-size: cover;}
@@ -47,12 +46,6 @@
              .hero-section {background-image: url("https://assets.widitrade.com/products/5b0d13b5ef286417795efcf2/fondo-sup.png"); background-position: center center; background-attachment: fixed; background-size: cover;}
              .btn:active.focus, .btn:active:focus, .btn:focus {outline: none;}
              .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus {border-color: transparent !important;}
-             #inferior {display: none}
-
-             @media only screen and (max-width: 600px) {
-               #inferior {display:inline;color: #FFF;text-align:center; padding-top:15px;position:fixed; left:0px; right:0px;bottom:0px;height:50px;z-index:0; min-width:100%;background-color:#ABEBC6; min-width: 100%;
-               background-color: #ABEBC6;font-family: Poppins;}
-              }
            </style>
 
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114649251-1"></script>
@@ -98,7 +91,7 @@
      <div class="hero-section">
       <div class="container nopadding">
        <div class="col-md-6">
-        <img class="img-responsive wow fadeIn" src="https://assets.widitrade.com/assets/products/5b0d13b5ef286417795efcf2/product1.png" alt="ByeInsects!" />
+        <img class="img-responsive wow fadeIn" src="https://assets.widitrade.com/assets/products/5b0d13b5ef286417795efcf2/product1.png" alt="ByeInsects!" title="ByeInsects!"/>
        </div>
        <div class="col-md-6">
         <div class="hero-content">
@@ -124,7 +117,7 @@
       <div class="container">
        <div class="features-inner">
         <div class="col-md-6">
-         <img class="img-responsive wow fadeIn" src="https://assets.widitrade.com/assets/products/5b0d13b5ef286417795efcf2/product2.png" alt="Features" />
+         <img class="img-responsive wow fadeIn" src="https://assets.widitrade.com/assets/products/5b0d13b5ef286417795efcf2/product2.png" alt="Features" title="Features"/>
         </div>
         <div class="col-md-6">
          <div class="features-list">
@@ -374,8 +367,8 @@
     <!-- END Footer Section -->
 
      <!-- CTA fix BTN -->
-     <div id="inferior">
-        <a href="#js-cta-scroll" style="width:100%; height:100%; font-size:20px;font-family: Poppins; text-decoration: none;color: black;">COMPRAR AHORA >></a>
+     <div id="inferior" class="cta-btn-section">
+        <a href="#js-cta-scroll" title="Comprar ahora">COMPRAR AHORA >></a>
      </div>
      <!-- END CTA fix btn -->
 

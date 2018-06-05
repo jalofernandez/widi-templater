@@ -1,0 +1,47 @@
+/*
+ * CTA BTN (section) with JS to Widi-Templater
+ * Mobile first!
+ * Flexbox layout
+ * JS needed
+ * @jalofernandez (author) to Widitrade
+ */
+
+@import (reference) '../_vars';
+@import (reference) '../_mixins';
+
+&:root {
+  /*
+  --bg-btn-color: #ABEBC6;
+  --bg-txt-color: #111111;
+  */
+  --bg-btn-color: @main-color;
+  --bg-txt-color: @color-white;
+}
+
+.cta-btn-section {
+  display: inline;
+  padding-top: 15px;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 50px;
+  z-index: 0;
+  min-width: 100%;
+  background-color: var(--bg-btn-color);
+  text-align: center;
+
+  a {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    font-family: Poppins, sans-serif;
+    color: var(--bg-txt-color);
+    text-decoration: none;
+  }
+}
+
+// only shown in mobile devices
+@media only screen and (min-width: 601px) {
+  .cta-btn-section { display: none; }
+}

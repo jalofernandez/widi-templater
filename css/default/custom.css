@@ -621,6 +621,47 @@
   transform: rotate(180deg);
 }
 */
+/*
+ * CTA BTN (section) with JS to Widi-Templater
+ * Mobile first!
+ * Flexbox layout
+ * JS needed
+ * @jalofernandez (author) to Widitrade
+ */
+:root {
+  /*
+  --bg-btn-color: #ABEBC6;
+  --bg-txt-color: #111111;
+  */
+  --bg-btn-color: #09bed1;
+  --bg-txt-color: white;
+}
+.cta-btn-section {
+  display: inline;
+  padding-top: 15px;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 50px;
+  z-index: 0;
+  min-width: 100%;
+  background-color: var(--bg-btn-color);
+  text-align: center;
+}
+.cta-btn-section a {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-family: Poppins, sans-serif;
+  color: var(--bg-txt-color);
+  text-decoration: none;
+}
+@media only screen and (min-width: 601px) {
+  .cta-btn-section {
+    display: none;
+  }
+}
 /* -- Boostrap (framework) overwrittes to avoid some layout bugs! -- */
 @media (min-width: 768px) and (max-width: 992px) {
   .navbar-brand {
@@ -634,10 +675,14 @@
 @media only screen and (max-width: 767px) {
   .navbar-default .navbar-collapse {
     text-align: center;
-    background-color: #FFFFFF;
+    background-color: white;
     border-bottom: 1px solid #e7e7e7;
   }
   .navbar-default .navbar-nav > li > a {
     margin-top: 10px;
   }
+}
+.btn-action {
+  background-color: #09bed1;
+  color: white;
 }
