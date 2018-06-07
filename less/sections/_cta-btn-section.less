@@ -43,5 +43,5 @@
 
 // only shown in mobile devices
 @media only screen and (min-width: 601px) {
-  .cta-btn-section { display: none; }
+  .cta-btn-section { display: none !important; } /* to avoid some classes added by JS (check "js" files) */
 }
