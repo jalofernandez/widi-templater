@@ -1,0 +1,47 @@
+/*
+ * Current product single FEATURE (subsection) to Widi-Templater
+ * Mobile first!
+ * Flexbox layout
+ * JS needed
+ * @jalofernandez (author) to Widitrade
+ */
+
+@import (reference) '../_vars';
+@import (reference) '../_mixins';
+
+// (product) "Feature" SubSection
+.product {
+  .feature-sub {
+    min-width: 100%;
+    min-height: 700px;
+    /* TODO: the followin´code line are available in HTML with an "style" property tag
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url(https://assets.widitrade.com/assets/products/5b02cb542cbdfd761621c142/slider.png);
+    */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 150px 0 150px 0;
+    position: relative;
+  }
+}
+
+.feature-sub {
+  .sub-inner {
+    max-width: 500px;
+    float: right;
+    text-align: center;
+    // main Title
+    h1 {
+      padding: 15px;
+      background-color:rgba(255,255,255,.3);
+      color: @color-black;
+      font-weight:700;
+      .border-radius(8px);
+    }
+    // "Call to action" BTN
+    .btn-action {
+      font-size: 16px;
+      padding: 10px 30px;
+    }
+  }
+}

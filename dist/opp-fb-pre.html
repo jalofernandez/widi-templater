@@ -1,0 +1,548 @@
+<!-- START
+{% extends 'store/baseLayout.html.twig' %}
+{% form_theme form 'store/fields.html.twig' %}
+{% block meta %}
+-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+        <!-- END
+        {% extends 'store/baseLayout.html.twig' %}
+        {% form_theme form 'store/fields.html.twig' %}
+        {% block meta %}
+        -->
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       <meta name="description" content="">
+       <meta name="author" content="">
+       <!-- ManyChat -->
+       <script src="//widget.manychat.com/1883024421960057.js" async="async"></script>
+
+       <!-- Not Visible -->
+       <title>ByeInsects!</title>
+
+       <link rel="shortcut icon" href="https://cdn.widitrade.com/favicon.ico">
+       <link rel="icon" type="image/x-icon" href="https://cdn.widitrade.com/favicon.ico" />
+      <!--
+      <link href="{{ asset('templates/5a993f262fcedb3573291551/bootstrap.min.css', 'assets') }}" rel="stylesheet" type="text/css" media="all" />
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="{{ asset('templates/5a993f262fcedb3573291551/animate.css', 'assets') }}">
+      <link rel="stylesheet" href="{{ asset('templates/5a993f262fcedb3573291551/owl.carousel.css', 'assets') }}">
+      <link rel="stylesheet" href="{{ asset('templates/5a993f262fcedb3573291551/owl.theme.css', 'assets') }}">
+      <link href="https://unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css" rel="stylesheet">
+      <link href="{{ asset('templates/'~template.id~'/style-v143.css', 'assets') }}" rel="stylesheet" type="text/css" media="all" />
+      <link href="{{ asset('templates/'~template.id~'/main.min.css', 'assets') }}" rel="stylesheet" type="text/css" media="all" />
+      -->
+      <link href="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/animate.css"> <!-- Resource style -->
+      <link rel="stylesheet" href="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/owl.carousel.css">
+      <link rel="stylesheet" href="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/owl.theme.css">
+      <link href="https://unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css" rel="stylesheet">
+      <link href="https://assets.widitrade.com/assets/templates/5b0be71cef2864789d7c8312/style-v143.css" rel="stylesheet" type="text/css" media="all" />
+      <link href="css/main.min.css" rel="stylesheet" type="text/css" media="all" />
+      <style>
+            html{font-family: Poppins, sans-serif;}
+            .navbar-default,.navbar-default .navbar-toggle:focus,.navbar-default .navbar-toggle:hover{background-color:transparent}.navbar{min-height:50px;margin-bottom:20px;border:1px solid transparent;font-family:Poppins,sans-serif;font-size:14px;font-weight:400;letter-spacing:1px;text-transform:capitalize;padding-top:25px}.navbar-default,.navbar-default .navbar-toggle{border-color:transparent}.navbar-default .navbar-nav>li>a{color:#111}.navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:hover{color:#09bed1}.navbar-default .navbar-toggle .icon-bar{background-color:#09bed1}.navbar-fixed-top{position:fixed;top:0;right:0;left:0;z-index:1030;border-width:0 0 1px}.navbar-brand{padding:0}.navbar-brand>img{display:block;height:50px;will-change:transform}.navbar-brand>img:hover{-webkit-transform:scale(1.05);-moz-transform:scale(1.05);-ms-transform:scale(1.05);-o-transform:scale(1.05);transform:scale(1.05);-webkit-transition:all .6s ease;-moz-transition:all .6s ease;-ms-transition:all .6s ease;-o-transition:all .6s ease;transition:all .6s ease}@media (min-width:768px) and (max-width:992px){.navbar-brand{padding-right:0}.nav>li>a{padding:10px 8px;top:5px}}@media (min-width:768px){.navbar-fixed-top{border-radius:0}}@media (max-width:767px){.navbar-nav{padding-top:0}.navbar-default{background-color:#fff;padding-top:0}.navbar-default .navbar-collapse{text-align:center;background-color:#fff;border-bottom:1px solid #e7e7e7}.navbar-default .navbar-nav>li>a{margin-top:10px}.navbar-brand{padding-left:15px;position:relative;left:15px}}@media only screen and (min-width:240px){.navbar.past-main{padding-top:5px;height:60px;background-color:rgba(255,255,255,.99);-webkit-transition:all .6s ease;-moz-transition:all .6s ease;-ms-transition:all .6s ease;-o-transition:all .6s ease;transition:all .6s ease;font-size:14px}}
+
+            .navbar-default .navbar-toggle .icon-bar{background-color: #09bed1!important;}
+
+            .btn:active.focus,.btn:active:focus,.btn:focus{outline:0}.btn-primary.active,.btn-primary:focus,.btn-primary:hover{border-color:transparent!important}.btn-action{border-color:transparent;background-color:#09bed1;color:#fff;font-size:16px;padding:10px 30px}
+            .hero-section{min-height: 700px;background-image:url('img/fondo-sup.png');background-position:center center;background-attachment:fixed;background-size:cover}.hero-content{padding: 0 !important;position:relative;top:200px}.hero-content h1{color:#09bed1;letter-spacing:.02em;text-shadow:1px 1px 0 rgba(255,255,255,.6),1px -1px 0 rgba(255,255,255,.6),-1px -1px 0 rgba(255,255,255,.6),-1px 1px 0 rgba(255,255,255,.6),1px 1px 0 rgba(255,255,255,.6)}.hero-content p{background-color:rgba(255,255,255,.6);padding:8px 15px;border-radius:5px}@media only screen and (max-width:992px){.hero-content{top:-50px;text-align:center}}@media (max-width:375px){.hero-content{top:-30px}}.hero-section-product-img{max-width:400px;margin:60px auto 30px}@media only screen and (max-width:480px){.hero-section-product-img{max-width:300px}}
+            .about-section{margin:0 auto;text-align:center}.about-section .about-content h2{color:#111}
+            .features-list ul{padding: 0 !important;list-style:none;list-style-type: none !important;margin-bottom: 50px;text-align: left !important}.features-list ul li{padding:5px;font-size:16px;font-family:Poppins,sans-serif !important}.features-list ul li:before{content:"\f2bc";display:inline-block;font-family:Ionicons;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;text-rendering:auto;line-height:1;-webkit-font-smoothing:antialiased;color:#09bed1;font-size:25px;position:relative;top:4px;padding-right:10px}
+
+            .footer-section{background-color:var(--bg-color);margin-top:50px;text-align:center}.footer{font-family:Poppins,sans-serif;background-color:transparent;width:100%;height:100%;overflow:hidden}.footer>p>a{padding:5px;color:var(--cta-btn-color)}.footer>p>a:focus,.footer>p>a:hover{color:var(--text-color);-webkit-transition:all 150ms ease-in-out;-moz-transition:all 150ms ease-in-out;-ms-transition:all 150ms ease-in-out;-o-transition:all 150ms ease-in-out;transition:all 150ms ease-in-out}.footer p{font-family: Poppins,sans-serif !important;}.footer p b{margin-bottom:10px}
+            .secure-section .secure-section-block{text-align:center}.secure-section .secure-section-block>img{align:center;margin:20px auto}@media (max-width:601px){.footer:not(.secure-section){padding-bottom:50px}}
+
+            .review-text{color:#f5db12;}
+            .navbar-default .navbar-nav>li>a{background-color:transparent!important}
+      </style>
+      <!-- TAGMANAGER
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114649251-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-114649251-1');
+      </script>
+      -->
+    </head>
+    <body>
+
+      <div class="wrapper">
+        <div class="container">
+         <nav class="navbar navbar-default navbar-fixed-top">
+         <div class="container">
+         <!-- Brand and toggle get grouped for better mobile display -->
+         <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+          </button>
+           <a class="navbar-brand page-scroll" href="#main">
+             <!--
+             <img src="{{ asset('products/'~product.id~'/3party-logo.png', 'assets') }}" height="50" alt="{{ product.name }}" />
+             -->
+             <img src="https://assets.widitrade.com/assets/products/5b279e19ef28646862050102/3party-logo.png" height="50" alt="ByeInsects!"/>
+           </a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <!--
+              <li><a class="page-scroll" href="#main">{{ template|templateText('menu1')}}</a></li>
+              -->
+              <li><a class="page-scroll" href="#main">Producto</a></li>
+              <li><a class="page-scroll" href="#features">Características</a></li>
+              <li><a class="page-scroll" href="#review-section">Opiniones</a></li>
+              <li><a class="page-scroll" href="#pricing">Comprar ahora</a></li>
+              <li><a class="page-scroll" href="#contact"></a></li>
+            </ul>
+          </div>
+
+         </div>
+        </nav><!-- /.navbar-collapse -->
+       </div><!-- /.container-fluid -->
+
+      <div class="main product" id="main"><!-- Main Section-->
+
+       <div class="hero-section">
+        <div class="container nopadding">
+         <div class="col-md-6">
+           <!--
+           <img class="hero-section-product-img img-responsive wow fadeIn" src="{{ asset('products/'~product.id~'/product1.png', 'assets') }}" alt="{{ product.name }}" title="{{ product.name }}"/>
+           -->
+           <img class="img-responsive wow fadeIn" src="https://assets.widitrade.com/assets/products/5b279e19ef28646862050102/product1.png" alt="ByeInsects!" title="ByeInsects!"/>
+         </div>
+         <div class="col-md-6">
+          <div class="hero-content">
+            <!--
+            <h1 class="wow fadeInUp" data-wow-delay="0s">{{ product|resourceText('web1')|raw}}</h1>
+            <p class="wow fadeInUp" data-wow-delay="0.2s">{{ product|resourceText('web2')|raw}}</p>
+            <a class="btn btn-action wow fadeInDown" data-wow-delay="0.2s" href="#js-cta-scroll">{{ template|templateText('buynow')}}</a>
+            -->
+           <h1 class="wow fadeInUp" data-wow-delay="0s">¡Di adiós a las picaduras de mosquitos!</h1>
+           <p class="wow fadeInUp" data-wow-delay="0.2s">Descubre el innovador gadget que mata al 99% de los insectos voladores que te rodean. <strong>Tu aliado contra los insectos.</strong></p>
+           <a class="btn btn-action wow fadeInDown" data-wow-delay="0.2s" href="#js-cta-scroll">COMPRAR AHORA</a>
+          </div>
+         </div>
+        </div>
+       </div>
+
+       <div class="about text-center">
+        <div class="container">
+         <div class="about-content">
+           <!--
+           <h2 class="wow fadeInUp" data-wow-delay="0.1s">"{{ product|resourceText('web3')|raw}}"</h2>
+           -->
+          <h2 class="wow fadeInUp" data-wow-delay="0.1s">"¿Sabías que el mosquito es el animal más peligroso para el humano? existen más de 2.500 especies de mosquitos que se encuentran distribuidas en todos los rincones del mundo. El motivo de su peligrosidad es debido a las enfermedades que transmite."
+          </h2>
+         </div>
+        </div>
+       </div>
+
+       <div id="features" class="features features-section">
+        <div class="container">
+         <div class="features-inner">
+          <div class="col-md-6">
+            <!--
+            <img class="img-responsive wow fadeIn" src="{{ asset('products/'~product.id~'/product2.png', 'assets') }}" alt="Features" title="Features"/>
+            -->
+           <img class="img-responsive wow fadeIn" src="https://assets.widitrade.com/assets/products/5b279e19ef28646862050102/product2.png" alt="Features" title="Features"/>
+          </div>
+          <div class="col-md-6">
+           <div class="features-list">
+             <!--
+             <h1 class="wow fadeInUp" data-wow-delay="0.1s">{{ template|templateText('espece')}}</h1>
+             <ul class="wow fadeInUp" data-wow-delay="0.2s">
+              <li>{{ product|resourceText('webli1')|raw}}</li>
+              <li>{{ product|resourceText('webli2')|raw}}</li>
+              <li>{{ product|resourceText('webli3')|raw}}</li>
+              <li>{{ product|resourceText('webli4')|raw}}</li>
+              <li>{{ product|resourceText('webli5')|raw}}</li>
+              <li>{{ product|resourceText('webli6')|raw}}</li>
+             </ul>
+             -->
+            <h1 class="wow fadeInUp" data-wow-delay="0.1s">Especificaciones</h1>
+            <ul class="wow fadeInUp" data-wow-delay="0.2s">
+             <li>Última tecnología para atrapar el 99% de los insectos voladores que se le acerquen.</li>
+             <li><strong> Ecológico con el medio ambiente</strong> Sin componentes químicos que dañan el medio ambiente.</li>
+             <li><strong> Bajo consumo eléctrico</strong> Utilizamos la última tecnología para consumir el mínimo de energía.</li>
+             <li><strong>¡Súper silencioso!</strong>Pensado para utilizar las 24horas sin que moleste tu sueño.</li>
+             <li>Diseño futurista y discreto.</li>
+             <li>Sólo venta online.</li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+
+       <!-- Section (product) Single FEATURE -->
+       <!--
+       <div class="feature-sub one-feature-subsection" style="background-image:url({{ asset('products/'~product.id~'/slider.png', 'assets') }});">
+       -->
+       <div class="feature-sub one-feature-subsection" style="background-image:url('https://assets.widitrade.com/assets/products/5b279e19ef28646862050102/slider.png')">
+        <div class="container">
+         <div class="sub-inner">
+           <!--
+           <h1 class="wow fadeInUp" data-wow-delay="0.1s">{{ product|resourceText('web4')|raw}}</h1>
+           <a href="#js-cta-scroll" class="btn btn-action fadeIn">{{ template|templateText('buynow')}}</a>
+           -->
+          <h1 class="wow fadeInUp" data-wow-delay="0.1s">¡Ya estamos en más de 1.000 hogares en España!</h1>
+          <a href="#js-cta-scroll" class="btn btn-action fadeIn">COMPRAR AHORA</a>
+         </div>
+        </div>
+       </div>
+
+       <!-- Section REVIEWS with Owl Carousel JS -->
+       <div id="review-section" class="review-section">
+           <div class="container">
+             <div class="col-md-10 col-md-offset-1">
+               <div class="reviews owl-carousel owl-theme">
+                <!-- (slide 01) Review with rating -->
+                <div class="review-single wow fadeInUp" data-wow-delay="0.2s">
+                     <div class="review-img">
+                       <!--
+                       <img src="{{ asset('templates/5b126536ef286460e11a90b4/user-woman-default.png', 'assets') }}" alt="User" title="User"/>
+                       -->
+                       <img src="img/user-woman-default.png" alt="User" title="User"/>>
+                     </div>
+                     <div class="review-copies">
+                       <div class="review-username">
+                         <!--
+                         <p>{{ template|templateText('reviewname1')|raw}}</p>
+                         -->
+                         <p>Laura<span>, de Madrid.</span></p>
+                       </div>
+                       <div class="review-description">
+                         <p>
+                           <i class="icon ion-md-quote"></i>
+                           <!--
+                           <span>{{ product|resourceText('review1')|raw}}</span>
+                           -->
+                           <span>Llevo usándolo más de 2 meses y estoy súper contenta con la compra. 0 picaduras en mi bebé.</span>
+                           <i class="icon ion-md-quote"></i>
+                         </p>
+                       </div>
+                       <div class="review-rating">
+                         <i class="icon ion-md-star"></i>
+                         <i class="icon ion-md-star"></i>
+                         <i class="icon ion-md-star"></i>
+                         <i class="icon ion-md-star"></i>
+                         <i class="icon ion-md-star-half"></i>
+                       </div>
+                     </div>
+                </div>
+                <!-- (slide 02) Review with rating -->
+                <div class="review-single">
+                  <div class="review-img">
+                    <!--
+                    <img src="{{ asset('templates/5b126536ef286460e11a90b4/user-man-default.png', 'assets') }}" alt="User" title="User"/>
+                    -->
+                    <img src="img/user-man-default.png" alt="User" title="User"/>
+                  </div>
+                  <div class="review-copies">
+                    <div class="review-username">
+                      <!--
+                      <p>{{ template|templateText('reviewname2')|raw}}</p>
+                      -->
+                      <p>Ignacio<span>, de Barcelona.</span></p>
+                    </div>
+                    <div class="review-description">
+                      <p>
+                        <i class="icon ion-md-quote"></i>
+                        <!--
+                        <span>{{ product|resourceText('review2')|raw}}</span>
+                        -->
+                        <span>El año pasado lo pasamos muy mal con los mosquitos. Este año nos hemos librado de ellos gracias a ByeInsects.</span>
+                        <i class="icon ion-md-quote"></i>
+                      </p>
+                    </div>
+                    <div class="review-rating">
+                      <i class="icon ion-md-star"></i>
+                      <i class="icon ion-md-star"></i>
+                      <i class="icon ion-md-star"></i>
+                      <i class="icon ion-md-star-half"></i>
+                      <i class="icon ion-md-star-outline"></i>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+           </div>
+          </div>
+        </div>
+
+        <!-- Section COUNTER DOWN -->
+       <div class="js-counterdown" id="js-cta-scroll">
+         <div id="countdown-clock">
+           <div class="countdown-clock-title clock-copy">
+             <!--
+             <div class="clock-copy">{{ template|templateText('countdown')}}</div>
+             -->
+             <div class="clock-copy">¡Descuento aplicado!</div>
+             <div class="clock-copy">Tu descuento caducará en:</div>
+           </div>
+           <div class="countdown-clock-days">
+             <span class="days clock-number"></span>
+             <div class="clock-copy">d</div>
+           </div>
+           <div class="countdown-clock-hours">
+             <span class="hours clock-number"></span>
+             <div class="clock-copy">h</div>
+           </div>
+           <div class="countdown-clock-minutes">
+             <span class="minutes clock-number"></span>
+             <div class="clock-copy">m</div>
+           </div>
+           <div class="countdown-clock-seconds">
+             <span class="seconds clock-number"></span>
+             <div class="clock-copy">s</div>
+           </div>
+         </div>
+        </div>
+
+       <!-- Section PRICING -->
+       <div id="pricing" class="pricing-section">
+        <div class="container">
+         <div class="col-sm-12 pricing-block">
+
+          <div class="pricing-intro">
+            <!--
+           <h1 class="wow fadeInUp" data-wow-delay="0s">{{ template|templateText('promotext')}}.</h1>
+           <p class="wow fadeInUp" data-wow-delay="0.2s">{{ template|templateText('promotext2')}}</p>
+            -->
+           <h1 class="wow fadeInUp" data-wow-delay="0s">PROMOCIÓN LANZAMIENTO.</h1>
+           <p class="wow fadeInUp" data-wow-delay="0.2s">Escoge entre las tres opciones que te ofrecemos.</p>
+           <h3 class="pricing-intro-stock wow fadeInUp" data-wow-delay="0.3s">¡Ya sólo quedan 27 unidades!</h3>
+          </div>
+
+          <div class="col-sm-4 pricing-card">
+            <div class="table-left wow fadeInUp" data-wow-delay="0.4s">
+                <!--
+                <div class="pricing-promo-pic">
+                  <img src="{{ asset('products/'~product.id~'/img-pack2.png', 'assets') }}" width="100%" />
+                </div>
+                <div class="pricing-details">
+                    <h2>{{ template|templateText('1unite')|raw}}</h2>
+                    <div class="price-block">
+                        <span class="price-title">{{ template|templateText('priceoffer')|raw}}</span>
+                        <span class="price price-current">{{ template|templateText('price1')|replace({'%product%': product.name, '%price1%': (product.matchedPrice(2).value * 1 )~' '~product.matchedPrice(2).currency, '%price_unit%': product.matchedPrice(1).value ~' '~product.matchedPrice(1).currency})|raw}}</span>
+                    </div>
+                    <div class="price-block">
+                        <span class="price-title">{{ template|templateText('priceoriginal')|raw}}</span>
+                        <span class="price price-original">{{ template|templateText('price2')|replace({'%product%': product.name, '%price1%': (product.matchedPrice(2).value * 2 )~' '~product.matchedPrice(2).currency, '%price_unit%': product.matchedPrice(2).value ~' '~product.matchedPrice(1).currency})|raw}}</span>
+                    </div>
+                </div>
+                <a class="btn-cta" href="{{ path('store_checkout', {'id': product.id, 'qty': 2}) }}">
+                   <button class="btn btn-primary btn-action btn-fill">{{ template|templateText('buynow')}}</button>
+                </a>
+                -->
+                <div class="pricing-promo-pic">
+                  <img src="https://assets.widitrade.com/assets/products/5b279e19ef28646862050102/img-pack2.png"/>
+                </div>
+                <div class="pricing-details">
+                    <h2>2 UNIDADES</h2>
+                    <div class="price-block">
+                      <span class="price-title">Precio oferta</span>
+                      <span class="price price-current">89.99 EUR</span>
+                    </div>
+                    <div class="price-block">
+                      <span class="price-title">Precio anterior</span>
+                      <span class="price price-original">179.98 EUR</span>
+                    </div>
+                </div>
+                <a class="btn-cta" href="/checkout/5b279e19ef28646862050102/?qty=2">
+                    <button class="btn btn-primary btn-action btn-fill">COMPRAR AHORA</button>
+                </a>
+            </div>
+          </div>
+
+          <div class="col-sm-4 pricing-card select" id="linkselect">
+            <div class="table-right table-center wow fadeInUp" data-wow-delay="0.6s">
+              <!--
+                <div class="pricing-promo-pic">
+                    <img src="{{ asset('products/'~product.id~'/img-pack1.png', 'assets') }}" width="100%"/>
+                </div>
+                <div class="pricing-details">
+                    <h2>{{ template|templateText('2unite')|raw}}</h2>
+                    <div class="price-block">
+                        <span class="price-title">{{ template|templateText('priceoffer')|raw}}</span>
+                        <span class="price price-current">{{ template|templateText('price1')|replace({'%product%': product.name, '%price1%': (product.matchedPrice(1).value * 1 )~' '~product.matchedPrice(1).currency, '%price_unit%': product.matchedPrice(1).value ~' '~product.matchedPrice(1).currency})|raw}}</span>
+                    </div>
+                    <div class="price-block">
+                        <span class="price-title">{{ template|templateText('priceoriginal')|raw}}</span>
+                        <span class="price price-original">{{ template|templateText('price2')|replace({'%product%': product.name, '%price1%': (product.matchedPrice(1).value * 2 )~' '~product.matchedPrice(1).currency, '%price_unit%': product.matchedPrice(1).value ~' '~product.matchedPrice(1).currency})|raw}}</span>
+                    </div>
+                </div>
+                <a class="btn-cta" href="{{ path('store_checkout', {'id': product.id, 'qty': 1}) }}">
+                    <button class="btn btn-primary btn-action btn-fill">{{ template|templateText('buynow')}}</button>
+                </a>
+              -->
+              <div class="pricing-promo-pic">
+                  <img src="https://assets.widitrade.com/assets/products/5b279e19ef28646862050102/img-pack1.png"/>
+              </div>
+              <div class="pricing-details">
+                  <h2>TOP SELLER!  <br/> 1 UNIDAD</h2>
+                  <div class="price-block custom-offer">
+                    <img class="custom-offer-img" src="img/oferta-personal.svg"/>
+                    <span class="price-title">Oferta personalizada</span>
+                    <span class="price price-current">39.99 EUR</span>
+                  </div>
+                  <div class="price-block">
+                    <span class="price-title">Precio anterior</span>
+                    <span class="price price-offer">49.99 EUR</span>
+                  </div>
+                  <div class="price-block">
+                    <span class="price-title">Precio original</span>
+                    <span class="price price-original">99.98 EUR</span>
+                  </div>
+              </div>
+              <a class="btn-cta" href="/checkout/5b279e19ef28646862050102/?qty=1">
+                  <button class="btn btn-primary btn-action btn-fill">COMPRAR AHORA</button>
+              </a>
+           </div>
+          </div>
+
+          <div class="col-sm-4 pricing-card">
+           <div class="table-right wow fadeInUp" data-wow-delay="0.6s">
+             <!--
+              <div class="pricing-promo-pic">
+                  <img src="{{ asset('products/'~product.id~'/img-pack3.png', 'assets') }}" width="100%"/>
+              </div>
+              <div class="pricing-details">
+                <h2>{{ template|templateText('3unite')|raw}}</h2>
+                <div class="price-block">
+                  <span class="price-title">{{ template|templateText('priceoffer')|raw}}</span>
+                  <span class="price price-current">{{ template|templateText('price1')|replace({'%product%': product.name, '%price1%': (product.matchedPrice(3).value * 1 )~' '~product.matchedPrice(3).currency, '%price_unit%': product.matchedPrice(1).value ~' '~product.matchedPrice(1).currency})|raw}}</span>
+                </div>
+                <div class="price-block">
+                  <span class="price-title">{{ template|templateText('priceoriginal')|raw}}</span>
+                  <span class="price price-original">{{ template|templateText('price2')|replace({'%product%': product.name, '%price1%': (product.matchedPrice(3).value * 2 )~' '~product.matchedPrice(3).currency, '%price_unit%': product.matchedPrice(1).value ~' '~product.matchedPrice(1).currency})|raw}}</span>
+                </div>
+              </div>
+              <a class="btn-cta" href="{{ path('store_checkout', {'id': product.id, 'qty': 3}) }}">
+                  <button class="btn btn-primary btn-action btn-fill">{{ template|templateText('buynow')}}</button>
+              </a>
+            -->
+            <div class="pricing-promo-pic">
+                <img src="https://assets.widitrade.com/assets/products/5b279e19ef28646862050102/img-pack3.png"/>
+            </div>
+            <div class="pricing-details">
+              <h2>3 UNIDADES</h2>
+              <div class="price-block">
+                <span class="price-title">Precio oferta</span>
+                <span class="price price-current">129.99 EUR</span>
+              </div>
+              <div class="price-block">
+                <span class="price-title">Precio anterior</span>
+                <span class="price price-original">259.98 EUR</span>
+              </div>
+            </div>
+            <a class="btn-cta" href="/checkout/5b279e19ef28646862050102/?qty=3">
+                <button class="btn btn-primary btn-action btn-fill">COMPRAR AHORA</button>
+            </a>
+           </div>
+          </div>
+
+         </div>
+        </div>
+       </div>
+
+        <div class="footer secure-section">
+          <!-- security transaction -->
+          <div class="container">
+            <div class="col-md-6 secure-section-block">
+                <!--
+                <img src="https://assets.widitrade.com/assets/templates/5a8c33c02fcedb71ba18f811/gadget-guarantee.png"/>
+                <p>{{ template|templateText('guarantee')|raw }}</p>
+                -->
+                <img src="https://assets.widitrade.com/assets/templates/5a8c33c02fcedb71ba18f811/gadget-guarantee.png" align="center" />
+                <p>
+                 <b class = "font-20">  GARANTÍA DE PRODUCTO  </b> <br> Todos nuestros productos están elaborados con tecnología punta de última generación.
+                </p>
+            </div>
+            <div class="col-md-6 secure-section-block">
+                <!--
+                <img src="https://assets.widitrade.com/assets/templates/5a8c33c02fcedb71ba18f811/gadget-lock.png"/>
+                <p>{{ template|templateText('transaction')|raw}}</p>
+                -->
+                <img src="https://assets.widitrade.com/assets/templates/5a8c33c02fcedb71ba18f811/gadget-lock.png" align="center" />
+                <p>
+                 <b class = "font-20"> TRANSACCIÓN SEGURA </b> <br> Todos los pedidos se procesan a través de una red muy segura. La información de su tarjeta de crédito nunca se almacena de todos modos. Respetamos tu privacidad.
+                </p>
+             </div>
+           </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer-section">
+         <div class="container" style="text-align:center;">
+           <!--
+           {% include 'store/includes/footer.html.twig' %}
+           -->
+           <footer class="footer">
+             <p>
+               <img style="width: 200px;" src="https://assets.widitrade.com/assets/web/logo-ecomerz.png">
+             </p>
+             <p>Copyrights &copy; 2018 <br> All Rights Reserved by Ecomercepro.
+             <a href="https://ecomerzpro.net/terms.html">Terms of Use</a> / <a href="https://ecomerzpro.net/privacy.html">Privacy Policy</a> / <a href="https://ecomerzpro.net/faq.html">FAQ</a>/ <a href="https://ecomerzpro.net/impressum.html">Impressum</a>/ <a href="https://ecomerzpro.net/devoluciones.html">Returns</a>/ <a href="https://ecomerzpro.net/acerca.html">About Us</a></p>
+           </footer>
+         </div>
+        </div>
+
+        <!-- CTA fix BTN -->
+        <div id="inferior" class="cta-btn-section">
+          <!--
+          <a href="#js-cta-scroll">{{ template|templateText('buynow')}} >></a>
+          -->
+          <a href="#js-cta-scroll" title="Comprar ahora">COMPRAR AHORA >></a>
+        </div>
+
+        <!-- Scroll To Top -->
+         <a id="back-top" class="back-to-top page-scroll" href="#main">
+           <i class="ion-md-arrow-round-up"></i>
+         </a>
+        <!-- Scroll To Top Ends-->
+      </div><!-- Main Section -->
+     </div><!-- Wrapper-->
+     <!--
+     {% endblock %}
+     -->
+
+       <!-- JS by Default! -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js"></script>
+       <script src="https://cdn.widitrade.com/bundles/fosjsrouting/js/router-176fa565f8.js"></script>
+       <script src="https://cdn.widitrade.com/assets/js/routes/routes-225c90c.js"></script>
+       <script src="https://js.stripe.com/v3/"></script>
+
+        <!-- JS custom
+        <script type="text/javascript" src="{{ asset('templates/5a993f262fcedb3573291551/jquery-2.1.1.js', 'assets') }}"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="{{ asset('templates/5a993f262fcedb3573291551/bootstrap.min.js', 'assets') }}"></script>
+        <script type="text/javascript" src="{{ asset('templates/5a993f262fcedb3573291551/plugins.js', 'assets') }}"></script>
+        <script type="text/javascript" src="{{ asset('templates/5a993f262fcedb3573291551/menu.js', 'assets') }}"></script>
+        <script type="text/javascript" src="{{ asset('templates/5a993f262fcedb3573291551/custom.js', 'assets') }}"></script>
+        {% block javascripts%}
+        -->
+        <script>
+           function getTimeRemaining(e){var t=Date.parse(e)-Date.parse(new Date),a=Math.floor(t/1e3%60),n=Math.floor(t/1e3/60%60),o=Math.floor(t/36e5%24);return{total:t,days:Math.floor(t/864e5),hours:o,minutes:n,seconds:a}}function initializeClock(e,t){var a=document.getElementById(e),n=a.querySelector(".days"),o=a.querySelector(".hours"),i=a.querySelector(".minutes"),s=a.querySelector(".seconds");function r(){var e=getTimeRemaining(t);n.innerHTML=e.days,o.innerHTML=("0"+e.hours).slice(-2),i.innerHTML=("0"+e.minutes).slice(-2),s.innerHTML=("0"+e.seconds).slice(-2),e.total<=0&&clearInterval(l)}r();var l=setInterval(r,1e3)}var deadline=new Date(Date.parse(new Date)+174e4);function scrollNav(){$(".nav a").click(function(){$(".active").removeClass("active"),$(this).closest("li").addClass("active");var e=$(this).attr("class");return $("."+e).parent("li").addClass("active"),$("html, body").stop().animate({scrollTop:$($(this).attr("href")).offset().top-160},400),$(".navbar-collapse").removeClass("in"),!1})}initializeClock("countdown-clock",deadline),scrollNav(),$(window).scroll(function(){$(window).scrollTop()>=2500?$(".cta-btn-section").hide():$(".cta-btn-section").show()});
+        </script>
+        <script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/jquery-2.1.1.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/plugins.js"></script>
+        <script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/menu.js"></script>
+        <script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/custom.js"></script>
+        <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"de79bc54f6","applicationID":"117809743","transactionName":"Y1VXNxcEWEQCWhZQClofdhYWEVlaTEoWVhdRb0URABNfUhQ=","queueTime":0,"applicationTime":52,"atts":"TxJUQV8eS0o=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+        <!--
+        {% endblock %}
+        -->
+    </body>
+</html>

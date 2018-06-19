@@ -1,0 +1,60 @@
+/*
+ * Intro HERO (section) to Widi-Templater
+ * Mobile first!
+ * Flexbox layout
+ * JS needed
+ * @jalofernandez (author) to Widitrade
+ */
+
+@import (reference) '../_vars';
+@import (reference) '../_mixins';
+
+// Section (product) Intro HERO
+.hero-section {
+    min-height:  700px;
+    /* TODO: the followin´code line are available in HTML with an "style" property tag
+    background-image: url(https://assets.widitrade.com/assets/products/5b279e19ef28646862050102/fondo-sup.png);
+    */
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.hero-content {
+  padding: 0 !important;
+  position: relative;
+  top: 200px;
+  // responsive behaviour
+  @media only screen and (max-width:992px) {
+    top: -50px;
+    text-align: center;
+  }
+  @media (max-width:375px) {
+    top: -30px;
+  }
+
+  h1 {
+    color: @main-color;
+    letter-spacing: .02em;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, .6),
+                 1px -1px 0 rgba(255, 255, 255, .6),
+                -1px -1px 0 rgba(255, 255, 255, .6),
+                -1px 1px 0 rgba(255, 255, 255, .6),
+                 1px 1px 0 rgba(255, 255, 255, .6);
+  }
+
+  p {
+    background-color: rgba(255, 255, 255, .6);
+    padding: 8px 15px;
+    .border-radius(5px);
+  }
+}
+
+.hero-section-product-img {
+    max-width: 400px;
+    margin: 60px auto 30px;
+    // responsive behaviour
+    @media only screen and (max-width:480px) {
+      max-width: 300px;
+    }
+}

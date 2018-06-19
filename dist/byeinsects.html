@@ -1,0 +1,460 @@
+<!-- START
+{% extends 'store/baseLayout.html.twig' %}
+{% form_theme form 'store/fields.html.twig' %}
+{% block meta %}
+-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+        <!-- END
+        {% extends 'store/baseLayout.html.twig' %}
+        {% form_theme form 'store/fields.html.twig' %}
+        {% block meta %}
+        -->
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       <meta name="description" content="">
+       <meta name="author" content="">
+
+        <!-- Not Visible -->
+        <title>ByeInsects!</title>
+
+        <link rel="shortcut icon" href="https://cdn.widitrade.com/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="https://cdn.widitrade.com/favicon.ico" />
+
+          <link href="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+          <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500" rel="stylesheet" type="text/css">
+          <link rel="stylesheet" href="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/animate.css"> <!-- Resource style -->
+          <link rel="stylesheet" href="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/owl.carousel.css">
+          <link rel="stylesheet" href="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/owl.theme.css">
+          <link href="https://assets.widitrade.com/assets/templates/5b0be71cef2864789d7c8312/style-v143.css" rel="stylesheet" type="text/css" media="all" />
+          <!-- custom CSS (stylesheets) -->
+          <!-- TODO: remove the following external link
+          <link href="https://unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css" rel="stylesheet" type="text/css" media="all"/>
+          -->
+          <link href="css/main.min.css" rel="stylesheet" type="text/css" media="all"/>
+          <!-- end of custom CSS -->
+          <style>
+             .product .feature-sub {background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url(https://assets.widitrade.com/assets/products/5b0d13b5ef286417795efcf2/slider.png);}
+             .feature-sub .sub-inner h1 {padding: 15px;color: black}
+             .footer {background-color: #F3F3F3; width: 100%; height: 100%; overflow: hidden; /* padding-top: 75px; */ padding-bottom: 20px;}
+             .back-to-top i {left: 10px; top: 5px;}
+             /*
+             .hero-section {background-image: url("{{ asset('products/5b0d13b5ef286417795efcf2/fondo-sup.png', 'assets') }}"); background-position: center center; background-attachment: fixed; background-size: cover;}
+             */
+             .hero-section {background-image: url("https://assets.widitrade.com/products/5b0d13b5ef286417795efcf2/fondo-sup.png"); background-position: center center; background-attachment: fixed; background-size: cover;}
+             .btn:active.focus, .btn:active:focus, .btn:focus {outline: none;}
+             .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus {border-color: transparent !important;}
+           </style>
+
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114649251-1"></script>
+          <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'UA-114649251-1');
+          </script>
+
+  </head>
+  <body>
+
+      <div class="wrapper">
+        <div class="container">
+         <nav class="navbar navbar-default navbar-fixed-top">
+         <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+         <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+          </button>
+           <a class="navbar-brand page-scroll" href="#main"><img src="https://assets.widitrade.com/assets/products/5b0d13b5ef286417795efcf2/3party-logo.png" height="50" alt="ByeInsects!" /></a>
+           </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+           <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a class="page-scroll" href="#main">Producto</a></li>
+              <li><a class="page-scroll" href="#features">Características</a></li>
+              <li><a class="page-scroll" href="#review-section">Opiniones</a></li>
+              <li><a class="page-scroll" href="#pricing">Comprar ahora</a></li>
+              <li><a class="page-scroll" href="#contact"></a></li>
+            </ul>
+          </div>
+         </div>
+        </nav><!-- /.navbar-collapse -->
+       </div><!-- /.container-fluid -->
+
+      <div class="main product" id="main"><!-- Main Section-->
+
+       <div class="hero-section">
+        <div class="container nopadding">
+         <div class="col-md-6">
+          <img class="img-responsive wow fadeIn" src="https://assets.widitrade.com/assets/products/5b0d13b5ef286417795efcf2/product1.png" alt="ByeInsects!" title="ByeInsects!"/>
+         </div>
+         <div class="col-md-6">
+          <div class="hero-content">
+           <h1 class="wow fadeInUp" data-wow-delay="0s">¡Di adiós a las picaduras de mosquitos!</h1>
+           <p class="wow fadeInUp" data-wow-delay="0.2s">
+           Descubre el innovador gadget que mata al 99% de los insectos voladores que te rodean. <strong>Tu aliado contra los insectos.</strong>
+           </p>
+           <a class="btn btn-action wow fadeInDown" data-wow-delay="0.2s" href="#js-cta-scroll">COMPRAR AHORA</a>
+          </div>
+         </div>
+        </div>
+       </div>
+
+       <div class="about text-center">
+        <div class="container">
+         <div class="about-content">
+          <h2 class="wow fadeInUp" data-wow-delay="0.1s">"¿Sabías que el mosquito es el animal más peligroso para el humano? existen más de 2.500 especies de mosquitos que se encuentran distribuidas en todos los rincones del mundo. El motivo de su peligrosidad es debido a las enfermedades que transmite."
+          </h2>
+         </div>
+        </div>
+       </div>
+
+       <div id="features" class="features">
+        <div class="container">
+         <div class="features-inner">
+          <div class="col-md-6">
+           <img class="img-responsive wow fadeIn" src="https://assets.widitrade.com/assets/products/5b0d13b5ef286417795efcf2/product2.png" alt="Features" title="Features"/>
+          </div>
+          <div class="col-md-6">
+           <div class="features-list">
+            <h1 class="wow fadeInUp" data-wow-delay="0.1s">Especificaciones</h1>
+            <ul class="wow fadeInUp" data-wow-delay="0.2s">
+             <li>Última tecnología para atrapar el 99% de los insectos voladores que se le acerquen.</li>
+             <li><strong> Ecológico con el medio ambiente</strong> Sin componentes químicos que dañan el medio ambiente.</li>
+             <li><strong> Bajo consumo eléctrico</strong> Utilizamos la última tecnología para consumir el mínimo de energía.</li>
+             <li><strong>¡Súper silencioso!</strong>Pensado para utilizar las 24horas sin que moleste tu sueño.</li>
+             <li>Diseño futurista y discreto.</li>
+             <li>Sólo venta online.</li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+
+       <div class="feature-sub">
+        <div class="container">
+         <div class="sub-inner">
+          <h1 class="wow fadeInUp" data-wow-delay="0.1s">¡Ya estamos en más de 1.000 hogares en España!</h1>
+          <a href="#js-cta-scroll" class="btn btn-action fadeIn">COMPRAR AHORA</a>
+         </div>
+        </div>
+       </div>
+
+       <!-- Section REVIEWS with Owl Carousel JS -->
+       <div id="review-section" class="review-section">
+         <div class="container">
+           <div class="col-md-10 col-md-offset-1">
+             <div class="reviews owl-carousel owl-theme">
+              <!-- (slide 01) Review with rating -->
+              <div class="review-single wow fadeInUp" data-wow-delay="0.2s">
+                   <div class="review-img">
+                     <img src="img/user-woman-default.png" alt=""/>
+                   </div>
+                   <div class="review-copies">
+                     <div class="review-username">
+                       <!-- todo: add this key (usermane is placed just in the end of paragraph)
+                       <p>{{ product|resourceText('¿?')|raw}}</p>
+                       -->
+                       <p>Laura<span>, de Madrid.</span></p>
+                     </div>
+                     <div class="review-description">
+                       <!--
+                       <p>{{ product|resourceText('review1')|raw}}</p>
+                       -->
+                       <p>
+                         <i class="icon ion-md-quote"></i>
+                         <span>Llevo usándolo más de 2 meses y estoy súper contenta con la compra. 0 picaduras en mi bebé.</span>
+                         <i class="icon ion-md-quote"></i>
+                       </p>
+                     </div>
+                     <div class="review-rating">
+                       <i class="icon ion-md-star"></i>
+                       <i class="icon ion-md-star"></i>
+                       <i class="icon ion-md-star"></i>
+                       <i class="icon ion-md-star"></i>
+                       <i class="icon ion-md-star-half"></i>
+                     </div>
+                   </div>
+              </div>
+              <!-- (slide 02) Review with rating -->
+              <div class="review-single">
+                <div class="review-img">
+                  <img src="img/user-man-default.png" alt=""/>
+                </div>
+                <div class="review-copies">
+                  <div class="review-username">
+                    <!-- todo: add this key (usermane is placed just in the end of paragraph)
+                    <p>{{ product|resourceText('¿?')|raw}}</p>
+                    -->
+                    <p>Ignacio<span>, de Barcelona.</span></p>
+                  </div>
+                  <div class="review-description">
+                    <!--
+                    <p>{{ product|resourceText('review2')|raw}}</p>
+                    -->
+                    <p>
+                      <i class="icon ion-md-quote"></i>
+                      <span>El año pasado lo pasamos muy mal con los mosquitos. Este año nos hemos librado de ellos gracias a ByeInsects.</span>
+                      <i class="icon ion-md-quote"></i>
+                    </p>
+                  </div>
+                  <div class="review-rating">
+                    <i class="icon ion-md-star"></i>
+                    <i class="icon ion-md-star"></i>
+                    <i class="icon ion-md-star"></i>
+                    <i class="icon ion-md-star-half"></i>
+                    <i class="icon ion-md-star-outline"></i>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+         </div>
+        </div>
+       </div>
+
+       <!-- Section COUNTER DOWN with JS -->
+       <div id="js-cta-scroll" class="js-counterdown">
+         <div id="countdown-clock">
+           <div class="countdown-clock-title clock-copy">
+             <div class="clock-copy">¡Descuento aplicado!</div>
+             <div class="clock-copy">Tu descuento caducará en:</div>
+           </div>
+           <div class="countdown-clock-days">
+             <span class="days clock-number"></span>
+             <div class="clock-copy">d</div>
+           </div>
+           <div class="countdown-clock-hours">
+             <span class="hours clock-number"></span>
+             <div class="clock-copy">h</div>
+           </div>
+           <div class="countdown-clock-minutes">
+             <span class="minutes clock-number"></span>
+             <div class="clock-copy">m</div>
+           </div>
+           <div class="countdown-clock-seconds">
+             <span class="seconds clock-number"></span>
+             <div class="clock-copy">s</div>
+           </div>
+         </div>
+        </div>
+
+       <!-- Section PRICING -->
+       <div id="pricing" class="pricing-section">
+        <div class="container">
+         <div class="col-sm-12 pricing-block">
+
+          <div class="pricing-intro">
+           <h1 class="wow fadeInUp" data-wow-delay="0s">PROMOCIÓN LANZAMIENTO.</h1>
+           <p class="wow fadeInUp" data-wow-delay="0.2s">Escoge entre las tres opciones que te ofrecemos.</p>
+           <h3 class="pricing-intro-stock wow fadeInUp" data-wow-delay="0.3s">¡Ya sólo quedan 27 unidades!</h3>
+          </div>
+
+          <div class="col-sm-4 pricing-card">
+            <div class="table-left wow fadeInUp" data-wow-delay="0.4s">
+                <div class="pricing-promo-pic">
+                    <img src="https://assets.widitrade.com/assets/products/5b0d13b5ef286417795efcf2/img-pack2.png"/>
+                </div>
+                <div class="pricing-details">
+                    <h2>2 UNIDADES</h2>
+                    <div class="price-block">
+                      <span class="price-title">Precio oferta</span>
+                      <span class="price price-current">89.99 EUR</span>
+                    </div>
+                    <div class="price-block">
+                      <span class="price-title">Precio anterior</span>
+                      <span class="price price-original">179.98 EUR</span>
+                    </div>
+                </div>
+                <a class="btn-cta" href="/checkout/5b0d13b5ef286417795efcf2/?qty=2">
+                    <button class="btn btn-primary btn-action btn-fill">COMPRAR AHORA</button>
+                </a>
+            </div>
+          </div>
+
+          <div class="col-sm-4 pricing-card select" id="linkselect">
+            <div class="table-right table-center wow fadeInUp" data-wow-delay="0.6s">
+                <div class="pricing-promo-pic">
+                    <img src="https://assets.widitrade.com/assets/products/5b0d13b5ef286417795efcf2/img-pack1.png"/>
+                </div>
+                <div class="pricing-details">
+                    <h2>TOP SELLER!  <br/> 1 UNIDAD</h2>
+                    <div class="price-block custom-offer">
+                      <img class="custom-offer-img" src="img/oferta-personal.svg"/>
+                      <span class="price-title">Oferta personalizada</span>
+                      <span class="price price-current">39.99 EUR</span>
+                    </div>
+                    <div class="price-block">
+                      <span class="price-title">Precio anterior</span>
+                      <span class="price price-offer">49.99 EUR</span>
+                    </div>
+                    <div class="price-block">
+                      <span class="price-title">Precio original</span>
+                      <span class="price price-original">99.98 EUR</span>
+                    </div>
+                </div>
+                <a class="btn-cta" href="/checkout/5b0d13b5ef286417795efcf2/?qty=1">
+                    <button class="btn btn-primary btn-action btn-fill">COMPRAR AHORA</button>
+                </a>
+           </div>
+          </div>
+
+          <div class="col-sm-4 pricing-card">
+           <div class="table-right wow fadeInUp" data-wow-delay="0.6s">
+            <div class="pricing-promo-pic">
+                <img src="https://assets.widitrade.com/assets/products/5b0d13b5ef286417795efcf2/img-pack3.png"/>
+            </div>
+            <div class="pricing-details">
+              <h2>3 UNIDADES</h2>
+              <div class="price-block">
+                <span class="price-title">Precio oferta</span>
+                <span class="price price-current">129.99 EUR</span>
+              </div>
+              <div class="price-block">
+                <span class="price-title">Precio anterior</span>
+                <span class="price price-original">259.98 EUR</span>
+              </div>
+            </div>
+            <a class="btn-cta" href="/checkout/5b0d13b5ef286417795efcf2/?qty=3">
+                <button class="btn btn-primary btn-action btn-fill">COMPRAR AHORA</button>
+            </a>
+           </div>
+          </div>
+
+         </div>
+        </div>
+       </div>
+
+      <!-- Section :: (prefooter) Security Transaction -->
+      <div class="footer">
+       <div class="container">
+        <div class="col-md-6" style="text-align:center">
+          <img src="https://assets.widitrade.com/assets/templates/5a8c33c02fcedb71ba18f811/gadget-guarantee.png" align="center" />
+          <p>
+           <b class = "font-20">  GARANTÍA DE PRODUCTO  </b> <br> Todos nuestros productos están elaborados con tecnología punta de última generación.
+          </p>
+        </div>
+        <div class="col-md-6">
+         <div class="container">
+        <div class="col-md-6" style="text-align:center">
+          <img src="https://assets.widitrade.com/assets/templates/5a8c33c02fcedb71ba18f811/gadget-lock.png" align="center" />
+          <p>
+           <b class = "font-20"> TRANSACCIÓN SEGURA </b> <br> Todos los pedidos se procesan a través de una red muy segura. La información de su tarjeta de crédito nunca se almacena de todos modos. Respetamos tu privacidad.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- END Section :: (prefooter) Security Transaction -->
+
+      <!-- Footer Section -->
+      <div>
+        <div class="container" style="text-align:center;">
+          <footer class="footer">
+            <p>
+              <img style="width: 200px;" src="https://assets.widitrade.com/assets/web/logo-ecomerz.png">
+            </p>
+            <p>Copyrights &copy; 2018 <br> All Rights Reserved by Ecomercepro.
+            <a href="https://ecomerzpro.net/terms.html">Terms of Use</a> / <a href="https://ecomerzpro.net/privacy.html">Privacy Policy</a> / <a href="https://ecomerzpro.net/faq.html">FAQ</a>/ <a href="https://ecomerzpro.net/impressum.html">Impressum</a>/ <a href="https://ecomerzpro.net/devoluciones.html">Returns</a>/ <a href="https://ecomerzpro.net/acerca.html">About Us</a></p>
+          </footer>
+        </div>
+      </div>
+      <!-- END Footer Section -->
+
+       <!-- CTA fix BTN -->
+       <div id="inferior" class="cta-btn-section">
+          <a href="#js-cta-scroll" title="Comprar ahora">COMPRAR AHORA >></a>
+       </div>
+       <!-- END CTA fix btn -->
+
+      <!-- Scroll To Top -->
+       <a id="back-top" class="back-to-top page-scroll" href="#main">
+         <i class="ion-md-arrow-round-up"></i>
+       </a>
+      <!-- END Scroll To Top -->
+
+    </div><!-- Main Section -->
+
+   </div><!-- Wrapper-->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js"></script>
+        <!-- Routing -->
+        <script src="https://cdn.widitrade.com/bundles/fosjsrouting/js/router-176fa565f8.js"></script>
+        <script src="https://cdn.widitrade.com/assets/js/routes/routes-225c90c.js"></script>
+        <script src="https://js.stripe.com/v3/"></script>
+
+        <!-- CUSTOM SCRIPTS -->
+        <script type="text/javascript">
+          function getTimeRemaining(endtime) {
+            var t = Date.parse(endtime) - Date.parse(new Date());
+            var seconds = Math.floor((t / 1000) % 60);
+            var minutes = Math.floor((t / 1000 / 60) % 60);
+            var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+            var days = Math.floor(t / (1000 * 60 * 60 * 24));
+            return {
+              'total': t,
+              'days': days,
+              'hours': hours,
+              'minutes': minutes,
+              'seconds': seconds
+            };
+           }
+
+           function initializeClock(id, endtime) {
+            var clock = document.getElementById(id);
+            var daysSpan = clock.querySelector('.days');
+            var hoursSpan = clock.querySelector('.hours');
+            var minutesSpan = clock.querySelector('.minutes');
+            var secondsSpan = clock.querySelector('.seconds');
+
+            function updateClock() {
+              var t = getTimeRemaining(endtime);
+
+              daysSpan.innerHTML = t.days;
+              hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+              minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+              secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+              if (t.total <= 0) {
+                clearInterval(timeinterval);
+              }
+            }
+
+            updateClock();
+            var timeinterval = setInterval(updateClock, 1000);
+           }
+
+           var deadline = new Date(Date.parse(new Date()) + 1 * 1 * 29 * 60 * 1000);
+           initializeClock('countdown-clock', deadline);
+        </script>
+        <script>
+          $(function() {
+            $(window).scroll(function() {
+              var scroll = $(window).scrollTop();
+              if (scroll >= 50) {
+                $("#inferior").addClass("jotunius");
+              } else {
+                $("#inferior").remove("jotunius");
+              }
+            });
+          });
+        </script>
+        <!-- END Custom scripts -->
+
+        <script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/jquery-2.1.1.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/plugins.js"></script>
+        <script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/menu.js"></script>
+        <script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5a993f262fcedb3573291551/custom.js"></script>
+        <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"de79bc54f6","applicationID":"117809743","transactionName":"Y1VXNxcEWEQCWhZQClofdhYWEVlaTEoWVhdRb0URABNfUhQ=","queueTime":0,"applicationTime":52,"atts":"TxJUQV8eS0o=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+      </body>
+</html>

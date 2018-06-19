@@ -1,0 +1,48 @@
+/*
+ * Current product a lot of FEATURES (section) to Widi-Templater
+ * Mobile first!
+ * Flexbox layout
+ * JS needed
+ * @jalofernandez (author) to Widitrade
+ */
+
+@import (reference) '../_vars';
+@import (reference) '../_mixins';
+
+// (product) "Features" Section
+.features-list {
+  ul {
+    padding: 0 !important;
+    list-style: none;
+    list-style-type: none !important;
+    margin-bottom: 50px;
+    text-align: left !important;
+
+    li {
+      padding: 5px;
+      font-size: 16px;
+      font-family: Poppins,sans-serif !important;
+      // to apply an Icon just before each (item) row
+      &:before{
+        // (common) in "Ionicons" Lib
+        content: "\f2bc";
+        display: inline-block;
+        font-family: Ionicons;
+        speak: none;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        text-rendering: auto;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        // custom styles
+        color: @main-color;
+        font-size: 25px;
+        position: relative;
+        top: 4px;
+        padding-right: 10px
+      }
+    }
+  }
+}

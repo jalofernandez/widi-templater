@@ -58,6 +58,12 @@ function scrollNav() {
       $(".navbar-collapse").removeClass("in");
         return false;
     });
+    // to CTA btns with smooth scrolls to "Pricing" (section)
+    $('#js-cta-scroll').click(function(){
+      $('html, body').stop().animate({
+        scrollTop: $( $(this).attr('href') ).offset().top - 160
+      }, 400);
+    });
     //- to go back to Top
     //$('.scrollTop a').scrollTop();
 }

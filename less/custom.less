@@ -8,10 +8,18 @@
 @import '_vars';
 @import '_mixins';
 // subsections
+@import 'sections/_hero-section';
+@import 'sections/_about-subsection';
 @import 'sections/_counter-down';
+@import 'sections/_features-section';
+@import 'sections/_feature-subsection';
 @import 'sections/_pricing-section';
 @import 'sections/_review-section';
 @import 'sections/_cta-btn-section';
+
+html {
+  font-family: var(--font-primary);
+}
 
 /* -- Boostrap (framework) overwrittes to avoid some layout bugs! -- */
 @media (min-width: 768px) and (max-width: 992px) {
@@ -25,15 +33,192 @@
   .navbar-default {
     .navbar-collapse {
       text-align: center;
-      background-color: @color-white;
+      background-color: var(--color-white);
       border-bottom: 1px solid #e7e7e7;
     }
     .navbar-nav > li > a { margin-top: 10px; }
   }
 }
 
+/*
+.navbar-default,.navbar-default .navbar-toggle:focus,.navbar-default .navbar-toggle:hover{background-color:transparent}.navbar{min-height:50px;margin-bottom:20px;border:1px solid transparent;font-family:Poppins,sans-serif;font-size:14px;font-weight:400;letter-spacing:1px;text-transform:capitalize;padding-top:25px}.navbar-default,.navbar-default .navbar-toggle{border-color:transparent}.navbar-default .navbar-nav>li>a{color:#111}.navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:hover{color:#09bed1}.navbar-default .navbar-toggle .icon-bar{background-color:#09bed1}.navbar-fixed-top{position:fixed;top:0;right:0;left:0;z-index:1030;border-width:0 0 1px}.navbar-brand{padding:0}.navbar-brand>img{display:block;height:50px;will-change:transform}.navbar-brand>img:hover{-webkit-transform:scale(1.05);-moz-transform:scale(1.05);-ms-transform:scale(1.05);-o-transform:scale(1.05);transform:scale(1.05);-webkit-transition:all .6s ease;-moz-transition:all .6s ease;-ms-transition:all .6s ease;-o-transition:all .6s ease;transition:all .6s ease}@media (min-width:768px) and (max-width:992px){.navbar-brand{padding-right:0}.nav>li>a{padding:10px 8px;top:5px}}@media (min-width:768px){.navbar-fixed-top{border-radius:0}}@media (max-width:767px){.navbar-nav{padding-top:0}.navbar-default{background-color:#fff;padding-top:0}.navbar-default .navbar-collapse{text-align:center;background-color:#fff;border-bottom:1px solid #e7e7e7}.navbar-default .navbar-nav>li>a{margin-top:10px}.navbar-brand{padding-left:15px;position:relative;left:15px}}@media only screen and (min-width:240px){.navbar.past-main{padding-top:5px;height:60px;background-color:rgba(255,255,255,.99);-webkit-transition:all .6s ease;-moz-transition:all .6s ease;-ms-transition:all .6s ease;-o-transition:all .6s ease;transition:all .6s ease;font-size:14px}}
+*/
+
+.navbar-default,
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+.navbar {
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  padding-top: 25px
+}
+
+.navbar-default,
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+}
+.navbar-default {
+  // Burger Icon when main navbar are collapse (mobile)
+  .navbar-toggle {
+    .icon-bar { background-color: var(--color-primary) }
+  }
+  //
+  .navbar-nav > li > a {
+    color: var(--color-back);
+    &:focus, &:hover {
+      color: var(--color-primary);
+    }
+  }
+}
+
+.navbar-fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  border-width: 0 0 1px;
+}
+
+.navbar-brand {
+  padding: 0;
+  > img {
+    display: run-inblock;
+    height: 50px;
+    will-change: transform;
+    &:hover{
+      .scale(.95);
+      .anim(all, .6s, ease);
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .navbar-brand {
+    padding-right: 0
+  }
+  .nav > li > a {
+    padding: inherit 10px 8px;
+    top: 5px
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-fixed-top {
+    background-color: var(--bg-navbar);
+    .border-radius(0);
+  }
+}
+
+@media (max-width: 767px){
+  .navbar-nav {
+    padding-top: 0
+  }
+  .navbar-default {
+    background-color: var(--color-white);
+    padding-top: 0;
+    .navbar-collapse {
+      text-align: center;
+      background-color: var(--color-white);
+      border-bottom: 1px solid #e7e7e7;
+    }
+    .navbar-nav > li > a { margin-top: 10px }
+  }
+  .navbar-brand {
+    padding-left: 15px;
+    position: relative;
+    left: 15px
+  }
+}
+// to enable "scrolls down/up" effect in main navbar
+@media only screen and (min-width: 240px){
+  .navbar.past-main {
+    padding-top: 5px;
+    height: 60px;
+    background-color: var(--bg-navbar-scroll);
+    font-size: 14px;
+    .anim(all, .6s, ease);
+    // each link
+    .navbar-nav > .active > a {
+      color: inherit;
+    }
+  }
+}
+
+.navbar-default {
+  .navbar-toggle .icon-bar { background-color: var(--color-primary) !important; }
+  .navbar-nav > li > a { background-color: transparent !important }
+}
+
 // (common) BTNs
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+  outline: 0;
+}
+.btn-primary.active,
+.btn-primary:focus,
+.btn-primary:hover {
+  border-color: transparent !important;
+}
 .btn-action {
-  background-color: @main-color;
-  color: @color-white;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 30px;
+  border-color: transparent;
+  &.active, &:focus, &:hover {
+    border-color: transparent;
+    background-color: var(--cta-btn-hover);
+    .anim();
+  }
+}
+
+// "Scrolls to Top" (common) Icon BTN
+.back-to-top i {
+  left:10px;
+  top:5px;
+}
+
+// (common) FOOTER
+.footer-section {
+  background-color: var(--bg-color);
+  margin-top: 50px;
+  text-align: center;
+}
+
+.footer {
+  font-family: var(--font-primary);
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+
+  > p > a {
+    padding: 5px;
+    color: var(--cta-btn-color);
+    &:focus, &:hover {
+      color: var(--text-color);
+      .anim();
+    }
+  }
+  p {
+    font-family: var(--font-primary);
+    b { margin-bottom: 10px }
+  }
+}
+
+@media (max-width:601px){
+  .footer:not(.secure-section) { padding-bottom: 50px }
 }

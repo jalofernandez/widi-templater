@@ -5,12 +5,31 @@
  * @jalofernandez (author) to Widitrade, 2018
  */
 
+/* TODO: remove old vars and move all of them to ":root" (CSS3) ones! */
 // Breakpoints
 @mobile: 'only screen and (max-width: 600px)';
 @desk:   'only screen and (min-width: 601px)';
 // (generic) Colors
-@color-white: white;
+@color-white: #ffffff;
+@color-black: #111111;
 // (custom) Colors
 @main-color:  #09bed1;
 @bg-color:    #F4F4F4;
 @text-color:  #505050;
+
+
+// CSS3 root to enable vars
+:root {
+  // (custom) Fonts
+  --font-primary: Poppins, sans-serif;
+  // (custom) Colors
+  --color-white:   #ffffff;
+  --color-back:    #111111;
+  --color-primary: #09bed1;
+  --text-color:    #505050;
+  //
+  --bg-navbar:        rgba(255,255,255,.65);
+  --bg-navbar-scroll: rgba(255,255,255,.99);
+  // (custom) BTNS
+  --cta-btn-hover: darken(#0dc0ce, 5%);
+}
