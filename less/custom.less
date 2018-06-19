@@ -7,11 +7,63 @@
 // common
 @import '_vars';
 @import '_mixins';
-// subsections
-@import 'sections/_counter-down';
-@import 'sections/_pricing-section';
-@import 'sections/_review-section';
-@import 'sections/_cta-btn-section';
+
+/* -- (main navigation links) NAVBAR -- */
+.navbar {
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  font-family: Poppins, sans-serif;
+  .text(14px, 400, 1px);
+  text-transform: capitalize;
+  padding-top: 25px;
+}
+// adding more styles to customize it!
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+  // each link
+  .navbar-nav > li > a {
+    color: @color-black;
+    &:focus, &:hover {
+      color: @main-color;
+    }
+  }
+  // hamburger Icon to launch (mobile version) navbar dropdown
+  .navbar-toggle {
+    border-color: transparent;
+    &:focus, &:hover {
+      background-color: transparent;
+    }
+    .icon-bar {
+      background-color: @main-color;
+    }
+  }
+}
+.navbar-fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  border-width: 0 0 1px;
+  // Responsive nehabiour
+}
+
+/* -- (main top navbar) LOGOTYPE -- */
+.navbar-brand {
+  padding: 0;
+  // each logo
+  & > img {
+    display: block;
+    height: 50px;
+    will-change: transform;
+    &:hover {
+      .scale(1.05);
+      .anim(all, .6s, ease);
+    }
+  }
+}
 
 /* -- Boostrap (framework) overwrittes to avoid some layout bugs! -- */
 @media (min-width: 768px) and (max-width: 992px) {
@@ -21,19 +73,200 @@
     top: 5px;
   }
 }
-@media only screen and (max-width: 767px) {
+
+@media (min-width: 768px) {
+  .navbar-fixed-top {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-nav { padding-top: 0; }
   .navbar-default {
+    background-color: @color-white;
+    padding-top: 0;
     .navbar-collapse {
       text-align: center;
       background-color: @color-white;
       border-bottom: 1px solid #e7e7e7;
     }
-    .navbar-nav > li > a { margin-top: 10px; }
+    .navbar-nav > li > a {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+  }
+  .navbar-brand { padding-left: 15px; }
+}
+
+@media only screen and (min-width: 240px) {
+  .navbar.past-main {
+    padding-top: 5px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.99);
+    .anim(all, .6s, ease);
+    font-size: 14px;
   }
 }
 
 // (common) BTNs
+.btn {
+  &:active.focus, &:active:focus, &:focus { outline: none; }
+}
+
+.btn-primary {
+  &:hover, &.active, &:focus { border-color: transparent !important; }
+}
+
 .btn-action {
+  border-color: transparent;
   background-color: @main-color;
   color: @color-white;
+  font-size: 16px;
+  padding: 10px 30px;
 }
+
+/* -- (very last section) FOOTER with "Copyright" & "Legal terms" -- */
+.footer-section {
+  background-color: var(--bg-color);
+  margin-top: 50px;
+  font-family: var(--main-font-family);
+  text-align: center;
+}
+.footer {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  // each link of "Legal Terms" bottom navbar
+  & > p > a {
+    padding: 5px;
+    color: var(--cta-btn-color);
+    &:hover, &:focus {
+      color: var(--text-color);
+      .anim();
+    }
+  }
+}
+
+.secure-section {
+  .secure-section-block {
+    text-align: center;
+    & > img {
+      align: center;
+      margin: 20px auto;
+    }
+  }
+}
+
+@media (max-width: 601px) {
+  .footer:not(.secure-section) {
+    padding-bottom: 50px; /* to place (bottom) mobile CTA btn */
+  }
+}
+
+/* -- (very first section) INTRO with main Product -- */
+// Full BG image
+.hero-section {
+  background-image: url("https://assets.widitrade.com/assets/products/5b02cb542cbdfd761621c142/fondo-sup.png");
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+// (main Product) TEXT / COPIES box
+.hero-content {
+  position: relative;
+  top: 200px;
+
+  h1 {
+    color: @main-color;
+    letter-spacing: 0.02em;
+    text-shadow: 1px 1px 0px rgba(255,255,255,.6),
+                 1px -1px 0px rgba(255,255,255,.6),
+                -1px -1px 0px rgba(255,255,255,.6),
+                -1px 1px 0px rgba(255,255,255,.6),
+                 1px 1px 0px rgba(255,255,255,.6);
+  }
+  p {
+    background-color: rgba(255,255,255,.6);
+    padding: 8px 15px;
+    border-radius: 5px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .hero-content {
+    top: -50px;
+    text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  .hero-content {
+    top: -30px;
+  }
+}
+// main Product IMAGE
+.hero-section-product-img {
+  max-width: 400px;
+  margin: 60px auto 30px auto;
+}
+@media only screen and (max-width: 480px) {
+  .hero-section-product-img {
+    max-width: 300px;
+  }
+}
+
+/* -- (section) Some description ABOUT current Product -- */
+.about-section {
+  margin: 50px auto;
+  text-align: center;
+
+  .about-content {
+    h2 { color: @color-black; }
+  }
+}
+
+/* -- (section) FEATURES list of current Product -- */
+.features-section {
+
+}
+// list of (Product) features
+.features-list {
+  ul {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 50px;
+    li {
+      padding: 5px;
+      font-size: 16px;
+      font-family: Poppins, sans-serif;
+      // to set custom Icons
+      &:before {
+        // just like "ionic" styles by default
+        // TODO: remove the following code when it´s not necessary (lib linked)
+        content: "\f2bc";
+        display: inline-block;
+        font-family: "Ionicons";
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        text-rendering: auto;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        // to customize styles just above
+        color: @main-color;
+        font-size: 25px;
+        position: relative;
+        top: 4px;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+/* -- All Section & Subsections (in order of appearance) -- */
+@import 'sections/_feature-subsection';
+@import 'sections/_review-section';
+@import 'sections/_counter-down';
+@import 'sections/_pricing-section';
+@import 'sections/_cta-btn-section';
