@@ -1,0 +1,266 @@
+.logo-image {
+    width: 62%;
+}
+
+@font-face {
+    font-family: Dunkin;
+    src: url("dunkin-sans.otf") format("opentype");
+}
+
+.product-name {
+    font-family: 'Dunkin', sans-serif;
+    text-transform: uppercase;
+    color: #EE2B47;
+    font-size: 50px !important;
+}
+
+.subtitle-slider {
+    font-weight: bold;
+    font-size: 33px;
+}
+
+.button-tracks {
+    background-color: #EE2B47;
+}
+.dark .button-dark:not(.button-border), .dark .button:hover {
+    background-color: #EE2B47 !important;
+}
+
+.content-custom-wrap {
+    position: relative;
+    padding: 0 0;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.content-custom-wrap.white {
+    background-color: #FFFFFF;
+}
+
+.content-custom-wrap.red {
+    background-color: #EE2B47;
+}
+
+.content-text {
+    font-size: 16px;
+}
+
+#content-offer {
+    position: relative;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border-bottom: 2px dashed #000;
+}
+.iconlist-color li i {
+    color: #000000;
+}
+
+.valid-offer {
+    text-transform: uppercase;
+    margin: 0 10px 0;
+}
+
+.valid-offer-date {
+    color: #EE2B47;
+    font-size: 60px;
+    margin: 0 10px 0;
+}
+
+.valid-offer-sub {
+    color: #000;
+    font-size: 18px;
+}
+
+.number-offer {
+    color:#EE2B47;
+    font-size: 30px;
+}
+
+.pricing-box {
+    background-color: #EE2B47;
+}
+
+.pricing-title {
+    background-color: #EE2B47;
+}
+
+.pricing-price {
+    color: #FFFFFF;
+}
+
+.pricing-title h3 {
+    color: #FFFFFF;
+}
+
+.button-custom-price {
+    background-color: #2C2E3C;
+}
+
+.pack-image {
+    width: 60%;
+}
+
+#content-packs {
+    position: relative;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border-bottom: 2px dashed #000;
+}
+
+.buy-now {
+    font-size: 50px;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.cronometer-text {
+    font-size: 25px;
+}
+
+.cronometer {
+    color: #98c646;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.feature-head {
+    font-size: 50px;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    margin-bottom: 0px;
+    color: #EE2B47;
+}
+
+.feature-sub {
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+    margin-bottom: 0px;
+}
+
+#footer.dark, .dark #footer {
+    background-color: #2C2E3C;
+}
+
+.button.button-3d:hover {
+    background-color: #2C2E3C !important;
+}
+
+.unit-price {
+    font-size:22px; font-weight: bold;
+}
+.currency {
+    font-size: 16px;
+}
+
+.valid-offer {
+    font-size: 28px;color: #000;
+}
+
+.margin-cards {
+    margin: 0;
+}
+
+#content-offer {
+    padding-bottom: 40px;
+}
+
+.top-margin-custom {
+    margin-top:17px !important;
+}
+
+
+
+.offer-image {
+    width: 70%;
+}
+
+.valid-offer-date {
+    font-size:33px;
+}
+
+.top-sell {
+    background-color: yellow;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.producto {
+    margin: 10px 10 px 0px 10px;
+}
+
+#header {
+    min-height: auto !important;
+    height: auto !important;
+    color: white !important;
+    background-color: #98c646 !important;
+    font-size: 16px;
+    font-weight: bold !important;
+}
+
+
+#header-wrap {
+    min-height: auto !important;
+    height: auto !important;
+    background-color: #98c646 !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.valid-offer-mobile {
+    font-size: 17px;
+    color: #000;
+    margin-bottom: 0px;
+}
+
+.valid-offer-date-mobile {
+    font-size: 22px;
+    color: #EE2B47;
+    margin-bottom: 0px;
+}
+
+
+
+@media only screen and (max-device-width:480px){
+    .valid-offer-date {
+        color: #EE2B47;
+        font-size: 41px;
+        margin: 0 10px 0;
+    }
+
+    .margin-cards {
+        margin: 50px!important;
+    }
+
+    #content-offer {
+        padding-bottom: 0px;
+    }
+
+    .offer-image {
+        width: 100%;
+    }
+
+    .valid-offer {
+        font-size: 11px;color: #000;
+    }
+
+    .valid-offer-date {
+        font-size:16px;
+    }
+
+    .unit-price {
+        font-size:14px; font-weight: bold;
+    }
+    .currency {
+        font-size: 12px;
+    }
+    .card-width {
+        width:65%;
+    }
+}

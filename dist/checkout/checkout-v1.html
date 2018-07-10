@@ -1,0 +1,1147 @@
+<!-- START
+{% extends 'store/baseLayout.html.twig' %}
+{% set display_single_product = true %}
+{% form_theme form 'store/fields.html.twig' %}
+{% block meta %}
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <!-- New Relic (common) -->
+      <meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+      <!-- END
+      {% extends 'store/baseLayout.html.twig' %}
+      {% set display_single_product = true %}
+      {% form_theme form 'store/fields.html.twig' %}
+      {% block meta %}
+      -->
+      <!-- Metatags (common) -->
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <meta name="author" content="Poliseon" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <!-- Title -->
+      <title>MOBAG</title>
+      <!-- Favicon (common) -->
+      <link rel="shortcut icon" href="https://cdn.widitrade.com/favicon.ico">
+      <link rel="icon" type="image/x-icon" href="https://cdn.widitrade.com/favicon.ico" />
+      <!-- STYLES (custom) -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--
+      <link href="{{ asset('templates/'~template.id~'/style-combined.min.css', 'assets') }}" type="text/css" rel="stylesheet"/>
+      <link href="{{ asset('templates/'~template.id~'/formvalidation.min.css', 'assets') }}" type="text/css" rel="stylesheet"/>
+      -->
+      <link href="https://assets.widitrade.com/assets/templates/5a69bd9ce707851a70620451/style-combined.min.css" type="text/css" rel="stylesheet">
+      <link href="https://assets.widitrade.com/assets/templates/5a69bd9ce707851a70620451/formvalidation.min.css" type="text/css" rel="stylesheet">
+      <!-- STYLES (overwrites) MOVED TO CSS main file
+      <style>
+          .goxxx {cursor:pointer;}
+          #next {cursor:pointer;}
+          header {background-color:#ffffff00;}
+      </style>
+      <style>
+        header { background:#fff }
+        .fv-form-bootstrap .has-error small {
+            color: red !important;
+        }
+      </style>
+      -->
+
+      <!-- TODO: NEW!! "main.min.css" -->
+      <link href="css/main.css" type="text/css" rel="stylesheet">
+      <!--
+      <link href="{{ asset('templates/'~template.id~'/main.min.css', 'assets') }}" type="text/css" rel="stylesheet"/>
+      <link href="{{ asset('templates/'~template.id~'/customs.min.css', 'assets') }}" type="text/css" rel="stylesheet"/>
+      -->
+
+      <!-- Google Tag manager (common) -->
+      <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-114649251-1"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-114649251-1');
+      </script>
+      <!-- ?!! -->
+      <style type="text/css"></style>
+      <style type="text/css"></style>
+  </head>
+
+  <body>
+    <!-- 00. main HEADER -->
+    <!--
+    <header><img alt="{{ product.name }} Logo" src="{{ asset('products/'~product.id~'/3party-logo.png', 'assets') }}" height="87px"></header>
+    -->
+    <header class="th-header">
+      <img class="th-header-logo" src="https://assets.widitrade.com/assets/products/5ab8ac9d2fcedb1dfc77171d/3party-logo.png" alt="MOBAG Logo">
+    </header>
+
+    <!-- 01. top BG image with Claim list -->
+    <div class="top th-hero-section" style="background-image: url('https://assets.widitrade.com/assets/products/5ab8ac9d2fcedb1dfc77171d/3party-slider.png');">
+      <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4 th-hero-block-img">
+              <img class="/img-res" src="https://assets.widitrade.com/assets/products/5ab8ac9d2fcedb1dfc77171d/3party-producto.png">
+            </div>
+            <div class="col-12 col-md-8 th-hero-block-claims">
+                <div class="tableor">
+                  <!--
+                  <ul class="list">
+                    <h4 style="color:black; background: white; padding: 15px; margin: 0 0 10px 0;">{{ product|resourceText('feature1')}}</h4>
+                    <li>{{ product|resourceText('feature2')}}</li>
+                    <li>{{ product|resourceText('feature3')}}</li>
+                    <li>{{ product|resourceText('feature4')}}</li>
+                  </ul>
+                  -->
+                  <ul class="list th-hero-claims">
+                    <li>
+                      <h4 class="th-hero-claim-main">La Movilidad y conexión sin límites: Batería portátil integrada y extraíble.</h4>
+                    </li>
+                    <li>Puerto de carga mediante USB integrado.</li>
+                    <li>Cierres ocultos y a prueba de cortes.</li>
+                    <li>Peso equilibrado para estar cómodo.</li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- main CONTAINER wrapper -->
+    <div class="th-wrapper">
+
+      <!-- 02. (layout) OFFERS or DISCOUNTS -->
+      <div class="container th-discounts-section">
+        <!--
+        <h2 class="text-center" style="margin-bottom:5px; font-size:25px;">{{ template|templateText('specialOffer')}}</h2>
+        <h2 class="text-center" style="margin-bottom:5px; font-size: 20px;">{{ template|templateText('offer')|replace({'%product%': product.name, '%price1%': (product.matchedPrice(1).value * 2 )~' '~product.matchedPrice(1).currency, '%price_unit%': product.matchedPrice(1).value ~' '~product.matchedPrice(1).currency})|raw}}</h2>
+        <h2 class="text-center" style="font-size:16px;"><u><b style="color: red;">{{ template|templateText('atention')}}</b>: {{ template|templateText('suboffer')|replace({'%date%': '<span class="date-offer"></span>'})|raw }}. </u></h2>
+        -->
+        <h2 class="th-discounts-copies th-discounts-title">OFERTA ESPECIAL</h2>
+        <h2 class="th-discounts-copies th-discounts-pricing">MOBAG está disponible a un precio de <strike>218 EUR</strike> <span>109 EUR/Unidad</span> (un 50% de descuento) y envío gratis.</h2>
+        <h2 class="th-discounts-copies th-discounts-attention">
+          <u>
+            <b>Atención</b>: La oferta promocional por lanzamiento acabará el día <span class="date-offer">10/07/2018</span> (incluye ese mismo día). Unidades limitadas.
+          </u>
+        </h2>
+      </div>
+
+      <!-- 03. (layout) columns CHECKOUT -->
+      <div class="container th-checkout-section">
+        <div class="row">
+          <!-- (All Form)
+          {% include 'store/includes/embedFormCollapse.html.twig' %}
+          -->
+
+          <!-- COLUMN 01 () -->
+          <div class="col-12 col-md-7">
+
+              <!-- 01. Collpasible BLOCK -->
+              <div class="card th-card">
+                <!-- "card" (fix) Header -->
+                <div class="card-header th-card-header" role="tab" id="headingOne">
+                  <h4 class="th-card-item-title">
+                    <i class="material-icons">assignment_turned_in</i> 1. Seleccione el producto
+                  </h4>
+                </div>
+                <!-- "card" (fix) section -->
+                <div class="container">
+                  <div class="row">
+                    <div class="col-4">
+                      <img src="https://assets.widitrade.com/assets/templates/5a69bd9ce707851a70620451/3party-descuento.png" class="img-fluid">
+                    </div>
+                    <div class="col-8 th-discount-applied">
+                      Su descuento se ha aplicado con éxito. No salga de la página para no perder el descuento.
+                    </div>
+                  </div>
+                </div>
+                <!-- "card" (collapside) Body -->
+                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body th-card-body">
+                    <!-- FORM -->
+                    <div class="row">
+
+                      <div class="col-6 col-md-5 th-card-item">
+                        <h4 class="th-card-item-title">Artículo</h4>
+                      </div>
+
+                      <div class="col-6 col-md-7 th-card-item">
+                        <h4 class="th-card-item-title">Precio</h4>
+                      </div>
+
+                      <div class="col-6 col-md-5 th-card-item th-highlight-left">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input id="radio-10" class="form-check-input" name="radio-group-1" type="radio" checked="checked" value="1" data-name="1 x MOBAG @ 109 EUR">
+                              <font>¡MÁS POPULAR!</font><br>1X MOBAG
+                            </label>
+                          </div>
+                      </div>
+
+                      <div class="col-6 col-md-7 th-card-item th-highlight-right">
+                          109 EUR <b>(109 EUR/UNIDAD)</b>
+                      </div>
+
+                      <div class="col-6 col-md-5 th-card-item">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                              <input id="radio-1" class="form-check-input" name="radio-group-1" type="radio" value="2" data-name="2 x MOBAG @ 199 EUR">
+                                &nbsp;2 MOBAG
+                            </label>
+                        </div>
+                      </div>
+
+                      <div class="col-6 col-md-7 th-card-item">
+                          199 EUR <b>(100 EUR/UNIDAD)</b>
+                      </div>
+
+                      <div class="col-6 col-md-5 th-card-item">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input id="radio-2" class="form-check-input" name="radio-group-1" type="radio" value="3" data-name="3 x MOBAG @ 269 EUR">
+                              &nbsp;3 MOBAG
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="col-6 col-md-7 th-card-item">
+                          269 EUR <b>(90 EUR/UNIDAD)</b>
+                      </div>
+                    </div>
+                    <br>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 02. Collpasible BLOCK -->
+              <div class="card th-card">
+                <!-- "card" (fix) Header -->
+                <div class="card-header th-card-header" role="tab" id="headingTwo">
+                  <h4 class="th-card-item-title">
+                    <i class="material-icons">local_shipping</i>  2. Detalles de envío
+                  </h4>
+                </div>
+                <!-- "card" (collapside) Body -->
+                <div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body th-card-body">
+                    <!-- (checkout) Form -->
+                    <form name="contact" method="post" action="/checkout/5ab8ac9d2fcedb1dfc77171d/" id="payment-form" style="margin-bottom:0px;" class="keepFormData fv-form fv-form-bootstrap" novalidate="novalidate">
+                      <!-- Hidden Submit BTN
+                      <button type="submit" class="fv-hidden-submit"></button>
+                      -->
+                      <!-- NAME & SURNAME -->
+                      <div class="form-group">
+                        <label placeholder="" class="form-control-label">Nombre y apellidos</label>
+                        <input type="text" id="contact_name" name="contact[name]" required="required" placeholder="" class="form-control" data-fv-field="contact[name]">
+                        <small class="text-help" data-fv-validator="notEmpty" data-fv-for="contact[name]" data-fv-result="NOT_VALIDATED" style="display: none;">Este campo es requerido</small>
+                      </div>
+                      <!-- EMAIL -->
+                      <div class="form-group">
+                        <label placeholder="" class="form-control-label">Email</label>
+                        <input type="email" id="contact_email" name="contact[email]" required="required" placeholder="" class="form-control" data-fv-field="contact[email]">
+                        <small class="text-help" data-fv-validator="notEmpty" data-fv-for="contact[email]" data-fv-result="NOT_VALIDATED" style="display: none;">Este campo es requerido</small>
+                        <small class="text-help" data-fv-validator="emailAddress" data-fv-for="contact[email]" data-fv-result="NOT_VALIDATED" style="display: none;">No es un email válido</small>
+                        <small class="text-help" data-fv-validator="regexp" data-fv-for="contact[email]" data-fv-result="NOT_VALIDATED" style="display: none;"> *</small>
+                      </div>
+                      <!-- PHONE number -->
+                      <div class="form-group">
+                        <label placeholder="" class="form-control-label">Teléfono</label>
+                        <input type="text" id="contact_phone" name="contact[phone]" required="required" placeholder="" class="form-control" data-fv-field="contact[phone]">
+                        <small class="text-help" data-fv-validator="notEmpty" data-fv-for="contact[phone]" data-fv-result="NOT_VALIDATED" style="display: none;">Este campo es requerido</small>
+                        <small class="text-help" data-fv-validator="numeric" data-fv-for="contact[phone]" data-fv-result="NOT_VALIDATED" style="display: none;">Este campo debe ser numérico</small>
+                      </div>
+                      <!-- ADDRESS -->
+                      <div class="form-group">
+                        <label placeholder="" class="form-control-label">Dirección</label>
+                        <input type="text" id="contact_address_street" name="contact[address][street]" required="required" placeholder="" class="form-control" data-fv-field="contact[address][street]">
+                        <small class="text-help" data-fv-validator="notEmpty" data-fv-for="contact[address][street]" data-fv-result="NOT_VALIDATED" style="display: none;">Este campo es requerido</small>
+                      </div>
+                      <!-- POST CODE -->
+                      <div class="form-group">
+                        <label placeholder="" class="form-control-label">C.P.</label>
+                        <input type="text" id="contact_address_postalCode" name="contact[address][postalCode]" required="required" placeholder="" class="form-control" data-fv-field="contact[address][postalCode]">
+                        <small class="text-help" data-fv-validator="notEmpty" data-fv-for="contact[address][postalCode]" data-fv-result="NOT_VALIDATED" style="display: none;">Este campo es requerido</small>
+                        <small class="text-help" data-fv-validator="numeric" data-fv-for="contact[address][postalCode]" data-fv-result="NOT_VALIDATED" style="display: none;">Este campo debe ser numérico</small>
+                      </div>
+                      <!-- CITY -->
+                      <div class="form-group">
+                        <div class="form-group">
+                          <label placeholder="" class="form-control-label">Municipio</label>
+                          <input type="text" id="contact_address_city" name="contact[address][city]" required="required" placeholder="" class="form-control" data-fv-field="contact[address][city]">
+                          <small class="text-help" data-fv-validator="notEmpty" data-fv-for="contact[address][city]" data-fv-result="NOT_VALIDATED" style="display: none;">Este campo es requerido</small>
+                        </div>
+                      </div>
+                      <!-- STATE -->
+                      <div class="form-group">
+                        <label placeholder="" class="form-control-label">Provincia</label>
+                        <input type="text" id="contact_address_state" name="contact[address][state]" required="required" placeholder="" class="form-control" data-fv-field="contact[address][state]">
+                        <small class="text-help" data-fv-validator="notEmpty" data-fv-for="contact[address][state]" data-fv-result="NOT_VALIDATED" style="display: none;">Please enter a value</small>
+                      </div>
+                      <!-- COUNTRY ("select2" jQuery plugin ) -->
+                      <div class="form-group">
+                        <label placeholder="" class="form-control-label">Pais</label>
+                        <select data-plugin="select2" id="contact_address_country" name="contact[address][country]" placeholder="" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+                          <option value="AF">Afganistán</option>
+                          <option value="AL">Albania</option>
+                          <option value="DE">Alemania</option>
+                          <option value="AD">Andorra</option>
+                          <option value="AO">Angola</option>
+                          <option value="AI">Anguila</option>
+                          <option value="AQ">Antártida</option>
+                          <option value="AG">Antigua y Barbuda</option>
+                          <option value="SA">Arabia Saudí</option>
+                          <option value="DZ">Argelia</option>
+                          <option value="AR">Argentina</option>
+                          <option value="AM">Armenia</option>
+                          <option value="AW">Aruba</option>
+                          <option value="AU">Australia</option>
+                          <option value="AT">Austria</option>
+                          <option value="AZ">Azerbaiyán</option>
+                          <option value="BS">Bahamas</option>
+                          <option value="BD">Bangladés</option>
+                          <option value="BB">Barbados</option>
+                          <option value="BH">Baréin</option>
+                          <option value="BE">Bélgica</option>
+                          <option value="BZ">Belice</option>
+                          <option value="BJ">Benín</option>
+                          <option value="BM">Bermudas</option>
+                          <option value="BY">Bielorrusia</option>
+                          <option value="BO">Bolivia</option>
+                          <option value="BA">Bosnia y Herzegovina</option>
+                          <option value="BW">Botsuana</option>
+                          <option value="BR">Brasil</option>
+                          <option value="BN">Brunéi</option>
+                          <option value="BG">Bulgaria</option>
+                          <option value="BF">Burkina Faso</option>
+                          <option value="BI">Burundi</option>
+                          <option value="BT">Bután</option>
+                          <option value="CV">Cabo Verde</option>
+                          <option value="KH">Camboya</option>
+                          <option value="CM">Camerún</option>
+                          <option value="CA">Canadá</option>
+                          <option value="IC">Canarias</option>
+                          <option value="BQ">Caribe neerlandés</option>
+                          <option value="QA">Catar</option>
+                          <option value="EA">Ceuta y Melilla</option>
+                          <option value="TD">Chad</option>
+                          <option value="CZ">Chequia</option>
+                          <option value="CL">Chile</option>
+                          <option value="CN">China</option>
+                          <option value="CY">Chipre</option>
+                          <option value="VA">Ciudad del Vaticano</option>
+                          <option value="CO">Colombia</option>
+                          <option value="KM">Comoras</option>
+                          <option value="KP">Corea del Norte</option>
+                          <option value="KR">Corea del Sur</option>
+                          <option value="CR">Costa Rica</option>
+                          <option value="CI">Côte d’Ivoire</option>
+                          <option value="HR">Croacia</option>
+                          <option value="CU">Cuba</option>
+                          <option value="CW">Curazao</option>
+                          <option value="DG">Diego García</option>
+                          <option value="DK">Dinamarca</option>
+                          <option value="DM">Dominica</option>
+                          <option value="EC">Ecuador</option>
+                          <option value="EG">Egipto</option>
+                          <option value="SV">El Salvador</option>
+                          <option value="AE">Emiratos Árabes Unidos</option>
+                          <option value="ER">Eritrea</option>
+                          <option value="SK">Eslovaquia</option>
+                          <option value="SI">Eslovenia</option>
+                          <option value="ES" selected="selected">España</option>
+                          <option value="US">Estados Unidos</option>
+                          <option value="EE">Estonia</option>
+                          <option value="ET">Etiopía</option>
+                          <option value="PH">Filipinas</option>
+                          <option value="FI">Finlandia</option>
+                          <option value="FJ">Fiyi</option>
+                          <option value="FR">Francia</option>
+                          <option value="GA">Gabón</option>
+                          <option value="GM">Gambia</option>
+                          <option value="GE">Georgia</option>
+                          <option value="GH">Ghana</option>
+                          <option value="GI">Gibraltar</option>
+                          <option value="GD">Granada</option>
+                          <option value="GR">Grecia</option>
+                          <option value="GL">Groenlandia</option>
+                          <option value="GP">Guadalupe</option>
+                          <option value="GU">Guam</option>
+                          <option value="GT">Guatemala</option>
+                          <option value="GF">Guayana Francesa</option>
+                          <option value="GG">Guernsey</option>
+                          <option value="GN">Guinea</option>
+                          <option value="GQ">Guinea Ecuatorial</option>
+                          <option value="GW">Guinea-Bisáu</option>
+                          <option value="GY">Guyana</option>
+                          <option value="HT">Haití</option>
+                          <option value="HN">Honduras</option>
+                          <option value="HU">Hungría</option>
+                          <option value="IN">India</option>
+                          <option value="ID">Indonesia</option>
+                          <option value="IQ">Irak</option>
+                          <option value="IR">Irán</option>
+                          <option value="IE">Irlanda</option>
+                          <option value="AC">Isla de la Ascensión</option>
+                          <option value="IM">Isla de Man</option>
+                          <option value="CX">Isla de Navidad</option>
+                          <option value="NF">Isla Norfolk</option>
+                          <option value="IS">Islandia</option>
+                          <option value="AX">Islas Åland</option>
+                          <option value="KY">Islas Caimán</option>
+                          <option value="CC">Islas Cocos</option>
+                          <option value="CK">Islas Cook</option>
+                          <option value="FO">Islas Feroe</option>
+                          <option value="GS">Islas Georgia del Sur y Sandwich del Sur</option>
+                          <option value="FK">Islas Malvinas</option>
+                          <option value="MP">Islas Marianas del Norte</option>
+                          <option value="MH">Islas Marshall</option>
+                          <option value="UM">Islas menores alejadas de EE. UU.</option>
+                          <option value="PN">Islas Pitcairn</option>
+                          <option value="SB">Islas Salomón</option>
+                          <option value="TC">Islas Turcas y Caicos</option>
+                          <option value="VG">Islas Vírgenes Británicas</option>
+                          <option value="VI">Islas Vírgenes de EE. UU.</option>
+                          <option value="IL">Israel</option>
+                          <option value="IT">Italia</option>
+                          <option value="JM">Jamaica</option>
+                          <option value="JP">Japón</option>
+                          <option value="JE">Jersey</option>
+                          <option value="JO">Jordania</option>
+                          <option value="KZ">Kazajistán</option>
+                          <option value="KE">Kenia</option>
+                          <option value="KG">Kirguistán</option>
+                          <option value="KI">Kiribati</option>
+                          <option value="XK">Kosovo</option>
+                          <option value="KW">Kuwait</option>
+                          <option value="LA">Laos</option>
+                          <option value="LS">Lesoto</option>
+                          <option value="LV">Letonia</option>
+                          <option value="LB">Líbano</option>
+                          <option value="LR">Liberia</option>
+                          <option value="LY">Libia</option>
+                          <option value="LI">Liechtenstein</option>
+                          <option value="LT">Lituania</option>
+                          <option value="LU">Luxemburgo</option>
+                          <option value="MK">Macedonia</option>
+                          <option value="MG">Madagascar</option>
+                          <option value="MY">Malasia</option>
+                          <option value="MW">Malaui</option>
+                          <option value="MV">Maldivas</option>
+                          <option value="ML">Mali</option>
+                          <option value="MT">Malta</option>
+                          <option value="MA">Marruecos</option>
+                          <option value="MQ">Martinica</option>
+                          <option value="MU">Mauricio</option>
+                          <option value="MR">Mauritania</option>
+                          <option value="YT">Mayotte</option>
+                          <option value="MX">México</option>
+                          <option value="FM">Micronesia</option>
+                          <option value="MD">Moldavia</option>
+                          <option value="MC">Mónaco</option>
+                          <option value="MN">Mongolia</option>
+                          <option value="ME">Montenegro</option>
+                          <option value="MS">Montserrat</option>
+                          <option value="MZ">Mozambique</option>
+                          <option value="MM">Myanmar (Birmania)</option>
+                          <option value="UN">Naciones Unidas</option>
+                          <option value="NA">Namibia</option>
+                          <option value="NR">Nauru</option>
+                          <option value="NP">Nepal</option>
+                          <option value="NI">Nicaragua</option>
+                          <option value="NE">Níger</option>
+                          <option value="NG">Nigeria</option>
+                          <option value="NU">Niue</option>
+                          <option value="NO">Noruega</option>
+                          <option value="NC">Nueva Caledonia</option>
+                          <option value="NZ">Nueva Zelanda</option>
+                          <option value="OM">Omán</option>
+                          <option value="NL">Países Bajos</option>
+                          <option value="PK">Pakistán</option>
+                          <option value="PW">Palaos</option>
+                          <option value="PA">Panamá</option>
+                          <option value="PG">Papúa Nueva Guinea</option>
+                          <option value="PY">Paraguay</option>
+                          <option value="PE">Perú</option>
+                          <option value="PF">Polinesia Francesa</option>
+                          <option value="PL">Polonia</option>
+                          <option value="PT">Portugal</option>
+                          <option value="PR">Puerto Rico</option>
+                          <option value="HK">RAE de Hong Kong (China)</option>
+                          <option value="MO">RAE de Macao (China)</option>
+                          <option value="GB">Reino Unido</option>
+                          <option value="CF">República Centroafricana</option>
+                          <option value="CG">República del Congo</option>
+                          <option value="CD">República Democrática del Congo</option>
+                          <option value="DO">República Dominicana</option>
+                          <option value="RE">Reunión</option>
+                          <option value="RW">Ruanda</option>
+                          <option value="RO">Rumanía</option>
+                          <option value="RU">Rusia</option>
+                          <option value="EH">Sáhara Occidental</option>
+                          <option value="WS">Samoa</option>
+                          <option value="AS">Samoa Americana</option>
+                          <option value="BL">San Bartolomé</option>
+                          <option value="KN">San Cristóbal y Nieves</option>
+                          <option value="SM">San Marino</option>
+                          <option value="MF">San Martín</option>
+                          <option value="PM">San Pedro y Miquelón</option>
+                          <option value="VC">San Vicente y las Granadinas</option>
+                          <option value="SH">Santa Elena</option>
+                          <option value="LC">Santa Lucía</option>
+                          <option value="ST">Santo Tomé y Príncipe</option>
+                          <option value="SN">Senegal</option>
+                          <option value="RS">Serbia</option>
+                          <option value="SC">Seychelles</option>
+                          <option value="SL">Sierra Leona</option>
+                          <option value="SG">Singapur</option>
+                          <option value="SX">Sint Maarten</option>
+                          <option value="SY">Siria</option>
+                          <option value="SO">Somalia</option>
+                          <option value="LK">Sri Lanka</option>
+                          <option value="SZ">Suazilandia</option>
+                          <option value="ZA">Sudáfrica</option>
+                          <option value="SD">Sudán</option>
+                          <option value="SS">Sudán del Sur</option>
+                          <option value="SE">Suecia</option>
+                          <option value="CH">Suiza</option>
+                          <option value="SR">Surinam</option>
+                          <option value="SJ">Svalbard y Jan Mayen</option>
+                          <option value="TH">Tailandia</option>
+                          <option value="TW">Taiwán</option>
+                          <option value="TZ">Tanzania</option>
+                          <option value="TJ">Tayikistán</option>
+                          <option value="IO">Territorio Británico del Océano Índico</option>
+                          <option value="TF">Territorios Australes Franceses</option>
+                          <option value="PS">Territorios Palestinos</option>
+                          <option value="TL">Timor-Leste</option>
+                          <option value="TG">Togo</option>
+                          <option value="TK">Tokelau</option>
+                          <option value="TO">Tonga</option>
+                          <option value="TT">Trinidad y Tobago</option>
+                          <option value="TA">Tristán de Acuña</option>
+                          <option value="TN">Túnez</option>
+                          <option value="TM">Turkmenistán</option>
+                          <option value="TR">Turquía</option>
+                          <option value="TV">Tuvalu</option>
+                          <option value="UA">Ucrania</option>
+                          <option value="UG">Uganda</option>
+                          <option value="UY">Uruguay</option>
+                          <option value="UZ">Uzbekistán</option>
+                          <option value="VU">Vanuatu</option>
+                          <option value="VE">Venezuela</option>
+                          <option value="VN">Vietnam</option>
+                          <option value="WF">Wallis y Futuna</option>
+                          <option value="YE">Yemen</option>
+                          <option value="DJ">Yibuti</option>
+                          <option value="ZM">Zambia</option>
+                          <option value="ZW">Zimbabue</option>
+                          <option value="EZ">zona euro</option>
+                        </select>
+                        <!-- load by JS (jQuery plugin: Select2)
+                        <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;">
+                          <span class="selection">
+                            <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-contact_address_country-container">
+                              <span class="select2-selection__rendered" id="select2-contact_address_country-container" title="España">España</span>
+                              <span class="select2-selection__arrow" role="presentation">
+                                <b role="presentation"></b>
+                              </span>
+                            </span>
+                          </span>
+                          <span class="dropdown-wrapper" aria-hidden="true"></span>
+                          -->
+                        </span>
+                      </div>
+                      <!-- Express SHIPPING -->
+                      <div class="form-group form-group-last-child">
+                        <input id="shipping" class="checkbox-style" data-type="SHIPPING_TYPE_EXPRESS" name="shipping" type="checkbox" checked="" data-name="asdad">
+                          <label for="shipping" class="checkbox-style-3-label">&nbsp;Envío Express a España +9.9EUR (48-72)H</label>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 03. Collpasible BLOCK -->
+              <div class="card th-card">
+                <!-- "card" (fix) Header -->
+                <div class="card-header th-card-header" role="tab" id="headingThree">
+                  <h4 class="th-card-item-title">
+                    <i class="material-icons">payment</i> 3. Pago
+                  </h4>
+                </div>
+                <!-- "card" (collapside) Body -->
+                <div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body th-card-body">
+                    <div class="row">
+                       <div class="col-12">
+                        <!-- "card" (checkout) Title
+                        <div class="row">
+                          <div class="col-12">
+                            <h5><span>Opción 1:</span> Tarjeta de crédito:</h5>
+                          </div>
+                        </div>
+                        -->
+                        <!-- "card" (checkout) Form fields -->
+                        <div class="row">
+                            <div class="col-12">
+                              <div class="form-group">
+                                <label class="form-control-label required" for="contact_name">Número Tarjeta</label>
+                                <div id="card-element" class="form-control StripeElement StripeElement--empty"><div class="__PrivateStripeElement" style="margin: 0px !important; padding: 0px !important; border: none !important; display: block !important; background: transparent !important; position: relative !important; opacity: 1 !important;"><iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeFrame3" allowpaymentrequest="true" src="https://js.stripe.com/v3/elements-inner-card-d6f82803d07e0907f9cd7cd76b88fbeb.html#style[base][color]=%2332325d&amp;style[base][lineHeight]=18px&amp;style[base][fontFamily]=%22Helvetica+Neue%22%2C+Helvetica%2C+sans-serif&amp;style[base][fontSmoothing]=antialiased&amp;style[base][fontSize]=16px&amp;style[base][::placeholder][color]=%23aab7c4&amp;style[invalid][color]=%23fa755a&amp;style[invalid][iconColor]=%23fa755a&amp;componentName=cardNumber&amp;wait=false&amp;rtl=false&amp;features[noop]=false&amp;origin=https%3A%2F%2Fstore.widitrade.com&amp;referrer=https%3A%2F%2Fstore.widitrade.com%2Fpreview%2F5ab8ad002fcedb1dec5dea1a%2F&amp;controllerId=__privateStripeController0" title="Secure payment input frame" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; height: 18px;"></iframe><input class="__PrivateStripeElement-input" aria-hidden="true" style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: 0px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent !important; pointer-events: none !important; font-size: 16px !important;"><input class="__PrivateStripeElement-safariInput" aria-hidden="true" tabindex="-1" style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: 0px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent !important; pointer-events: none !important; font-size: 16px !important;"></div></div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-8">
+                              <div class="form-group">
+                                <label class="form-control-label required" for="contact_name">Fecha expiración</label>
+                                <div id="card-expiry" class="form-control StripeElement StripeElement--empty"><div class="__PrivateStripeElement" style="margin: 0px !important; padding: 0px !important; border: none !important; display: block !important; background: transparent !important; position: relative !important; opacity: 1 !important;"><iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeFrame4" allowpaymentrequest="true" src="https://js.stripe.com/v3/elements-inner-card-d6f82803d07e0907f9cd7cd76b88fbeb.html#style[base][color]=%2332325d&amp;style[base][lineHeight]=18px&amp;style[base][fontFamily]=%22Helvetica+Neue%22%2C+Helvetica%2C+sans-serif&amp;style[base][fontSmoothing]=antialiased&amp;style[base][fontSize]=16px&amp;style[base][::placeholder][color]=%23aab7c4&amp;style[invalid][color]=%23fa755a&amp;style[invalid][iconColor]=%23fa755a&amp;componentName=cardExpiry&amp;wait=false&amp;rtl=false&amp;features[noop]=false&amp;origin=https%3A%2F%2Fstore.widitrade.com&amp;referrer=https%3A%2F%2Fstore.widitrade.com%2Fpreview%2F5ab8ad002fcedb1dec5dea1a%2F&amp;controllerId=__privateStripeController0" title="Secure payment input frame" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; height: 18px;"></iframe><input class="__PrivateStripeElement-input" aria-hidden="true" style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: 0px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent !important; pointer-events: none !important; font-size: 16px !important;"><input class="__PrivateStripeElement-safariInput" aria-hidden="true" tabindex="-1" style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: 0px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent !important; pointer-events: none !important; font-size: 16px !important;"></div></div>
+                              </div>
+                            </div>
+                            <div class="col-4">
+                              <div class="form-group">
+                                <label class="form-control-label required" for="contact_name">CVC</label>
+                                <div id="card-cvc" class="form-control StripeElement StripeElement--empty"><div class="__PrivateStripeElement" style="margin: 0px !important; padding: 0px !important; border: none !important; display: block !important; background: transparent !important; position: relative !important; opacity: 1 !important;"><iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeFrame5" allowpaymentrequest="true" src="https://js.stripe.com/v3/elements-inner-card-d6f82803d07e0907f9cd7cd76b88fbeb.html#style[base][color]=%2332325d&amp;style[base][lineHeight]=18px&amp;style[base][fontFamily]=%22Helvetica+Neue%22%2C+Helvetica%2C+sans-serif&amp;style[base][fontSmoothing]=antialiased&amp;style[base][fontSize]=16px&amp;style[base][::placeholder][color]=%23aab7c4&amp;style[invalid][color]=%23fa755a&amp;style[invalid][iconColor]=%23fa755a&amp;componentName=cardCvc&amp;wait=false&amp;rtl=false&amp;features[noop]=false&amp;origin=https%3A%2F%2Fstore.widitrade.com&amp;referrer=https%3A%2F%2Fstore.widitrade.com%2Fpreview%2F5ab8ad002fcedb1dec5dea1a%2F&amp;controllerId=__privateStripeController0" title="Secure payment input frame" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; height: 18px;"></iframe><input class="__PrivateStripeElement-input" aria-hidden="true" style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: 0px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent !important; pointer-events: none !important; font-size: 16px !important;"><input class="__PrivateStripeElement-safariInput" aria-hidden="true" tabindex="-1" style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: 0px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent !important; pointer-events: none !important; font-size: 16px !important;"></div></div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="th-alert" id="card-errors" role="alert"></div>
+                        <button type="submit" class="button button-3d ladda-button th-checkout-btn" data-style="expand-right" id="confirm-stripe-btn" name="register-form-submit">
+                            PAGAR CON TARJETA
+                        </button>
+                      </div>
+                    </div>
+                      <!-- "card" (checkout) Title
+                      <div class="row">
+                        <div class="col-12">
+                          <h5><span>Opción 2:</span> PayPal:</h5>
+                        </div>
+                      </div>
+                      -->
+                    <!-- "card" (checkout) Security & guaranteed -->
+                    <div class="th-text-center">
+                        <hr>
+                        <img src="https://assets.widitrade.com/assets/templates/5a69bd9ce707851a70620451/3party-securepayment.png"/>
+                        <hr>
+                    </div>
+                    <!-- "card" (checkout) PAYPAL Submit -->
+                    <div class="row">
+                        <div class="col-12">
+                          <button type="submit" class="button button-3d ladda-button th-checkout-btn" data-style="expand-right" id="paypal-btn">
+                            PAGAR CON PAYPAL
+                          </button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <!-- COLUMN 02 (aside info) -->
+          <div class="col-12 col-md-5">
+            <!-- 1. Offer range & details -->
+            <div class="th-card th-box">
+              <div class="fixed">
+                <!--
+                <h5>{{ template|templateText('validOffer')|replace({'%date%': '<span class="date-offer"></span>'})|raw}}</h5>
+                -->
+                <h5 class="th-box-title">¡Oferta válida hasta el día <span class="date-offer">10/07/2018</span>!</h5>
+              </div>
+              <hr class="puntos">
+              <div class="row">
+                <div class="col-12 col-md-6">
+                  <img src="https://assets.widitrade.com/assets/products/5ab8ac9d2fcedb1dfc77171d/3party-producto.png" style="width:200px;">
+                </div>
+                <div class="col-12 col-md-6">
+                  <!--
+                  <p class="text1">{{ template|templateText('limited')}}</p>
+                  <p class="text2">{{ template|templateText('leftCounter')|replace({'%number%':random(30) + 2})|raw }}</p>
+                  -->
+                  <p class="text1 th-disclaimer">
+                    Oferta válida hasta el día...
+                  </p>
+                  <p class="text2 th-disclaimer">
+                    Solo<br><span id="boxes_qty1" style="float: none; width: auto;">30</span> en promoción restantes
+                  </p>
+                </div>
+              </div>
+              <div class="th-product-viewers">
+                <i class="material-icons">visibility</i>
+                <!--
+                <strong> {{ random(100) + 2 }} {{ template|templateText('watchingNow') }}</strong>
+                -->
+                <strong>41 personas están viendo este producto</strong>
+              </div>
+            </div>
+            <!-- 2. Offer range & details -->
+            <div class="th-card th-box">
+              <img src="https://assets.widitrade.com/assets/templates/5a69bd9ce707851a70620451/3party-securepayment.png" class="img-fluid">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- end of .th-wrapper -->
+
+    <!-- 00. Clearfix (common) -->
+    <div style="min-height:40px;" class="clear"></div>
+
+    <!-- 00. FOOTER (common) -->
+    <!--
+    {% include 'store/includes/footer.html.twig' %}
+    -->
+    <footer class="footer">
+      <p>
+        <img style="width: 200px;" src="https://assets.widitrade.com/assets/web/logo-ecomerz.png">
+      </p>
+      <p>
+        Copyrights © 2018 <br> All Rights Reserved by Ecomercepro.
+        <a href="https://ecomerzpro.net/terms.html">Terms of Use</a> / <a href="https://ecomerzpro.net/privacy.html">Privacy Policy</a> / <a href="https://ecomerzpro.net/faq.html">FAQ</a> / <a href="https://ecomerzpro.net/impressum.html">Impressum</a> / <a href="https://ecomerzpro.net/devoluciones.html">Returns</a> / <a href="https://ecomerzpro.net/acerca.html">About Us</a>
+      </p>
+    </footer>
+
+    <!--
+    <div id="header-wrap">
+      <div class="container clearfix text-center">
+        {{ template|templateText('discountBar')|raw }}
+      </div>
+    </div>
+    -->
+    <div id="header-wrap" class="th-counterdown">
+      <div class="container clearfix">
+        Descuento del 50% aplicado. Este código caduca en: <span class="crono">00:00:00</span>. ¡Por favor, no salga de esta página!
+      </div>
+    </div>
+
+   <!-- Scripts Block (common) -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js"></script>
+   <script src="https://cdn.widitrade.com/bundles/fosjsrouting/js/router-176fa565f8.js"></script>
+   <script src="https://cdn.widitrade.com/assets/js/routes/routes-c00636e.js"></script>
+   <script src="https://js.stripe.com/v3/"></script>
+   <!--
+   <script type="text/javascript" src="{{ asset('templates/'~template.id~'/js-combined.min.js', 'assets') }}"></script>
+   <script type="text/javascript" src="{{ asset('templates/'~template.id~'/formutils.js', 'assets') }}"></script>
+   -->
+   <script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5a69bd9ce707851a70620451/js-combined.min.js"></script>
+   <script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5a69bd9ce707851a70620451/formutils.js"></script>
+   <!--
+   <script>
+       {% include 'store/includes/embedFormCollapse.js.twig'  %}
+       $(document).ready(function() {
+         $(".date-offer").html(moment().locale(window.navigator.language).add(1, 'h').format('L'));
+         var timer = new Timer();
+         timer.start({countdown: true, startValues: {minutes:30, seconds: 30}});
+         $('.crono').html(timer.getTimeValues().toString());
+         timer.addEventListener('secondsUpdated', function (e) {
+           $('.crono').html(timer.getTimeValues().toString());
+         });
+       });
+   </script>
+    -->
+    <!-- Superlong Script! -->
+    <script>
+      $(function() {
+
+      $(document).keypress(
+          function(event){
+              if (event.which == '13') {
+                  event.preventDefault();
+              }
+          });
+
+      $('.goxxx').click(function (){
+          location.href = "#headingTwo";
+          $('#collapseTwo').collapse();
+          $('html, body').animate({
+              scrollTop: $('#headingTwo').offset().top
+          }, 1000);
+          $('.name').focus();
+      });
+
+      $("#next").click(function() {
+          $(form).data('formValidation').validate();
+          if (!$(form).data('formValidation').isValid()) {
+              $('html, body').animate({
+                  scrollTop: $('.has-error').first().offset().top
+              }, 1000);
+              return false;
+          } else {
+              $('#collapseThree').collapse();
+              $('html, body').animate({
+                  scrollTop: $('#headingThree').offset().top
+              }, 1000);
+          }
+      });
+      $( ".tab-linker" ).click(function() {
+
+          if ($(this).hasClass('payment-go')) {
+              $(form).data('formValidation').validate({focusInvalid: false});
+              if (!$(form).data('formValidation').isValid()) {
+                  return false;
+              }
+          }
+
+          return false;
+      });
+
+      $("#contact_address_country").select2({ width: '100%' });
+      if ($("#variants").length) {
+          $("#variants").select2({
+              width: '50%',
+              minimumResultsForSearch: Infinity
+          });
+      }
+
+
+      var stripe = Stripe('pk_live_wr7QPJGEkZFjTw0JwUJlNohG');
+      var elements = stripe.elements();
+
+      var style = {
+          base: {
+              color: '#32325d',
+              lineHeight: '18px',
+              fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+              fontSmoothing: 'antialiased',
+              fontSize: '16px',
+              '::placeholder': {
+                  color: '#aab7c4'
+              }
+          },
+          invalid: {
+              color: '#fa755a',
+              iconColor: '#fa755a'
+          }
+      };
+
+      // Create an instance of the card Element
+      var card = elements.create('cardNumber', {style: style});
+      var cardExpiry = elements.create('cardExpiry', {style: style});
+      var cardCvc = elements.create('cardCvc', {style: style});
+
+      // Add an instance of the card Element into the `card-element` <div>
+      card.mount('#card-element');
+      cardExpiry.mount('#card-expiry');
+      cardCvc.mount('#card-cvc');
+
+      // Handle real-time validation errors from the card Element.
+      card.addEventListener('change', function(event) {
+          var displayError = document.getElementById('card-errors');
+          if (event.error) {
+              displayError.textContent = event.error.message;
+          } else {
+              displayError.textContent = '';
+          }
+      });
+
+      cardExpiry.addEventListener('change', function(event) {
+          var displayError = document.getElementById('card-errors');
+          if (event.error) {
+              displayError.textContent = event.error.message;
+          } else {
+              displayError.textContent = '';
+          }
+      });
+
+      cardCvc.addEventListener('change', function(event) {
+          var displayError = document.getElementById('card-errors');
+          if (event.error) {
+              displayError.textContent = event.error.message;
+          } else {
+              displayError.textContent = '';
+          }
+      });
+
+
+      var form = document.getElementById('payment-form');
+
+      // Create a source or display an error when the form is submitted.
+      $("#confirm-stripe-btn").on("click", function(e) {
+          $(form).data('formValidation').validate({focusInvalid: false});
+          if(!form.checkValidity() || !$(form).data('formValidation').isValid()) {
+              $('html, body').animate({
+                  scrollTop: $('.has-error').first().offset().top
+              }, 1000);
+              return;
+          }
+
+          e.preventDefault();
+          $("#paypal-btn").attr("disabled", true);
+          var l = Ladda.create( document.querySelector('#confirm-stripe-btn'));
+          l.start();
+
+          stripe.createSource(card).then(function (result) {
+              if (result.error) {
+                  l.stop();
+                  $("#paypal-btn").attr("disabled", false);
+                  // Inform the user if there was an error
+                  var errorElement = document.getElementById('card-errors');
+                  errorElement.textContent = result.error.message;
+              } else {
+                  // Send the source to your server
+                  stripeSourceHandler(result.source);
+              }
+          });
+      });
+
+      $("#paypal-btn").on("click", function(e) {
+          $(form).data('formValidation').validate({focusInvalid: false});
+          if(!form.checkValidity() || !$(form).data('formValidation').isValid()) {
+              $('html, body').animate({
+                  scrollTop: $('.has-error').first().offset().top
+              }, 1000);
+              return;
+          }
+
+          e.preventDefault();
+          $("#confirm-stripe-btn").attr("disabled", true);
+          var l = Ladda.create( document.querySelector('#paypal-btn'));
+          l.start();
+
+          var qty = $("input:radio[name ='radio-group-1']:checked").val();
+          var hiddenInput0 = document.createElement('input');
+          hiddenInput0.setAttribute('type', 'hidden');
+          hiddenInput0.setAttribute('name', 'qty');
+          hiddenInput0.setAttribute('value', qty);
+          form.appendChild(hiddenInput0);
+
+          if ($("#shipping").is(':checked')) {
+              var hiddenInputShipping = document.createElement('input');
+              hiddenInputShipping.setAttribute('type', 'hidden');
+              hiddenInputShipping.setAttribute('name', 'shipping');
+              hiddenInputShipping.setAttribute('value', $("#shipping").data("type"));
+              form.appendChild(hiddenInputShipping);
+          }
+
+          if ($("#variants").length) {
+              var hiddenInputVariants = document.createElement('input');
+              hiddenInputVariants.setAttribute('type', 'hidden');
+              hiddenInputVariants.setAttribute('name', 'variant');
+              hiddenInputVariants.setAttribute('value', $("#variants").val());
+              form.appendChild(hiddenInputVariants);
+          }
+
+          var hiddenInput1 = document.createElement('input');
+          hiddenInput1.setAttribute('type', 'hidden');
+          hiddenInput1.setAttribute('name', 'payment_way');
+          hiddenInput1.setAttribute('value', 'paypal');
+          form.appendChild(hiddenInput1);
+
+          form.submit();
+      });
+
+      function stripeSourceHandler(source) {
+          var qty = $("input:radio[name ='radio-group-1']:checked").val();
+          var hiddenInput0 = document.createElement('input');
+          hiddenInput0.setAttribute('type', 'hidden');
+          hiddenInput0.setAttribute('name', 'qty');
+          hiddenInput0.setAttribute('value', qty);
+          form.appendChild(hiddenInput0);
+
+          if ($("#shipping").is(':checked')) {
+              var hiddenInputShipping = document.createElement('input');
+              hiddenInputShipping.setAttribute('type', 'hidden');
+              hiddenInputShipping.setAttribute('name', 'shipping');
+              hiddenInputShipping.setAttribute('value', $("#shipping").data("type"));
+              form.appendChild(hiddenInputShipping);
+          }
+
+          if ($("#variants").length) {
+              var hiddenInputVariants = document.createElement('input');
+              hiddenInputVariants.setAttribute('type', 'hidden');
+              hiddenInputVariants.setAttribute('name', 'variant');
+              hiddenInputVariants.setAttribute('value', $("#variants").val());
+              form.appendChild(hiddenInputVariants);
+          }
+
+          var hiddenInput1 = document.createElement('input');
+          hiddenInput1.setAttribute('type', 'hidden');
+          hiddenInput1.setAttribute('name', 'payment_way');
+          hiddenInput1.setAttribute('value', 'stripe');
+          form.appendChild(hiddenInput1);
+
+          var hiddenInput2 = document.createElement('input');
+          hiddenInput2.setAttribute('type', 'hidden');
+          hiddenInput2.setAttribute('name', 'stripe_id');
+          hiddenInput2.setAttribute('value', source.id);
+          form.appendChild(hiddenInput2);
+
+          var hiddenInput3 = document.createElement('input');
+          hiddenInput3.setAttribute('type', 'hidden');
+          hiddenInput3.setAttribute('name', 'status');
+          hiddenInput3.setAttribute('value', source.status);
+          form.appendChild(hiddenInput3);
+
+          var hiddenInput4 = document.createElement('input');
+          hiddenInput4.setAttribute('type', 'hidden');
+          hiddenInput4.setAttribute('name', 'type');
+          hiddenInput4.setAttribute('value', source.type);
+          form.appendChild(hiddenInput4);
+
+          var hiddenInput5 = document.createElement('input');
+          hiddenInput5.setAttribute('type', 'hidden');
+          hiddenInput5.setAttribute('name', 'usage');
+          hiddenInput5.setAttribute('value', source.usage);
+          form.appendChild(hiddenInput5);
+
+          var hiddenInput6 = document.createElement('input');
+          hiddenInput6.setAttribute('type', 'hidden');
+          hiddenInput6.setAttribute('name', 'client_secret');
+          hiddenInput6.setAttribute('value', source.client_secret);
+          form.appendChild(hiddenInput6);
+
+          var hiddenInput7 = document.createElement('input');
+          hiddenInput7.setAttribute('type', 'hidden');
+          hiddenInput7.setAttribute('name', 'card.country');
+          hiddenInput7.setAttribute('value', source.card.country);
+          form.appendChild(hiddenInput7);
+
+          var hiddenInput8 = document.createElement('input');
+          hiddenInput8.setAttribute('type', 'hidden');
+          hiddenInput8.setAttribute('name', 'card.brand');
+          hiddenInput8.setAttribute('value', source.card.brand);
+          form.appendChild(hiddenInput8);
+
+          var hiddenInput9 = document.createElement('input');
+          hiddenInput9.setAttribute('type', 'hidden');
+          hiddenInput9.setAttribute('name', 'card.exp_month');
+          hiddenInput9.setAttribute('value', source.card.exp_month);
+          form.appendChild(hiddenInput9);
+
+          var hiddenInput10 = document.createElement('input');
+          hiddenInput10.setAttribute('type', 'hidden');
+          hiddenInput10.setAttribute('name', 'card.exp_year');
+          hiddenInput10.setAttribute('value', source.card.exp_year);
+          form.appendChild(hiddenInput10);
+
+          var hiddenInput11 = document.createElement('input');
+          hiddenInput11.setAttribute('type', 'hidden');
+          hiddenInput11.setAttribute('name', 'card.last_digits');
+          hiddenInput11.setAttribute('value', source.card.last4);
+          form.appendChild(hiddenInput11);
+
+          var hiddenInput12 = document.createElement('input');
+          hiddenInput12.setAttribute('type', 'hidden');
+          hiddenInput12.setAttribute('name', 'card.three_d_secure');
+          hiddenInput12.setAttribute('value', source.card.three_d_secure);
+          form.appendChild(hiddenInput12);
+
+          // Submit the form
+          form.submit();
+      }
+
+      $('form').formValidation({
+          framework: "bootstrap",
+          icon: null,
+          excluded: [':disabled'],
+          err: {
+              clazz: 'text-help'
+          },
+          fields: {
+              "contact[name]": {
+                  validators: {
+                      notEmpty: {
+                          message: "Este\x20campo\x20es\x20requerido"
+                      }
+                  }
+              },
+              "contact[email]": {
+                  validators: {
+                      notEmpty: {
+                          message: "Este\x20campo\x20es\x20requerido"
+                      },
+                      emailAddress: {
+                          message: "No\x20es\x20un\x20email\x20v\u00E1lido"
+                      },
+                      regexp: {
+                          regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
+                          message: ' *'
+                      }
+                  }
+              },
+              "contact[phone]": {
+                  validators: {
+                      notEmpty: {
+                          message: "Este\x20campo\x20es\x20requerido"
+                      },
+                      numeric: {
+                          message: "Este\x20campo\x20debe\x20ser\x20num\u00E9rico"
+                      }
+                  }
+              },
+              "contact[vatNumber]": {
+                  validators: {
+                      notEmpty: {
+                          message: "Este\x20campo\x20es\x20requerido"
+                      }
+                  }
+              },
+              "contact[address][street]": {
+                  validators: {
+                      notEmpty: {
+                          message: "Este\x20campo\x20es\x20requerido"
+                      }
+                  }
+              },
+              "contact[address][number]": {
+                  validators: {
+                      notEmpty: {
+                          message: "Este\x20campo\x20es\x20requerido"
+                      },
+                      numeric: {
+                          message: "Este\x20campo\x20debe\x20ser\x20num\u00E9rico"
+                      }
+                  }
+              },
+              "contact[address][postalCode]": {
+                  validators: {
+                      notEmpty: {
+                          message: "Este\x20campo\x20es\x20requerido"
+                      },
+                      numeric: {
+                          message: "Este\x20campo\x20debe\x20ser\x20num\u00E9rico"
+                      }
+                  }
+              },
+              "contact[address][city]": {
+                  validators: {
+                      notEmpty: {
+                          message: "Este\x20campo\x20es\x20requerido"
+                      }
+                  }
+              }
+          }
+      }).on('err.form.fv', function(e, data) {
+          $('#processTabs a[href="#ptab2"]').trigger('click');
+      }).on('success.field.fv', function(e, data) {
+          $.ajax({
+              url: Routing.generate('store_checkout_track_form'),
+              type: 'POST',
+              data: $("form").serialize()
+          });
+      });
+
+      $(".summary").html($("input:radio[name ='radio-group-1']:checked").data("name"));
+      $("input:radio[name ='radio-group-1']").on("change", function () {
+          $(".summary").html($("input:radio[name ='radio-group-1']:checked").data("name"));
+      });
+
+      $("#contact_address_country").on("select2:select", function () {
+          location.href = addUrlParameter(location.href, 'country', $(this).val());
+      });
+    });
+      $(document).ready(function() {
+        $(".date-offer").html(moment().locale(window.navigator.language).add(1, 'h').format('L'));
+        var timer = new Timer();
+        timer.start({countdown: true, startValues: {minutes:30, seconds: 30}});
+        $('.crono').html(timer.getTimeValues().toString());
+        timer.addEventListener('secondsUpdated', function (e) {
+          $('.crono').html(timer.getTimeValues().toString());
+        });
+      });
+    </script>
+
+    <!-- STRIPE + Beacon + another JS... -->
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"de79bc54f6","applicationID":"117809743","transactionName":"Y1VXNxcEWEQCWhZQClofdhYWEVlaTEoWVhdRb0URABNfUhQ=","queueTime":0,"applicationTime":22,"atts":"TxJUQV8eS0o=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+    <iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeController0" allowpaymentrequest="true" src="https://js.stripe.com/v3/controller-5dbf37cd6825f257db10966e4b114bb9.html#apiKey=pk_live_wr7QPJGEkZFjTw0JwUJlNohG&amp;stripeJsId=e780896d-32c7-4cf6-b2ea-4816870f5639&amp;features[noop]=false&amp;origin=https%3A%2F%2Fstore.widitrade.com&amp;referrer=https%3A%2F%2Fstore.widitrade.com%2Fpreview%2F5ab8ad002fcedb1dec5dea1a%2F&amp;controllerId=__privateStripeController0" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe><iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeMetricsController6" allowpaymentrequest="true" src="https://js.stripe.com/v2/m/outer.html#url=https%3A%2F%2Fstore.widitrade.com%2Fpreview%2F5ab8ad002fcedb1dec5dea1a%2F&amp;title=MOBAG&amp;referrer=https%3A%2F%2Fmanager.widitrade.com%2Flandings%2F&amp;muid=fe77bbfa-0f29-465d-96f7-dbf56de3ffc7&amp;sid=c18dabf5-5cab-4ae8-8176-7e2ead5a031d&amp;preview=false" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important;"></iframe><script type="text/javascript" src="chrome-extension://emikbbbebcdfohonlaifafnoanocnebl/js/minerkill.js"></script><domflags id="domflags-root"></domflags>
+
+  </body>
+</html>

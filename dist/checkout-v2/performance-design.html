@@ -1,0 +1,88 @@
+{% extends 'store/baseLayout.html.twig' %}
+{% set display_single_product = true %}
+{% form_theme form 'store/fields.html.twig' %}
+{% block meta %}
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Poliseon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+{% endblock %}
+{% block stylesheets %}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{{ asset('templates/'~template.id~'/style-combined.min.css', 'assets') }}" type="text/css" rel="stylesheet"/>
+  <link href="{{ asset('templates/'~template.id~'/formvalidation.min.css', 'assets') }}" type="text/css" rel="stylesheet"/>
+  <style>
+      .goxxx {cursor:pointer;}
+      #next {cursor:pointer;}
+      header {background-color:#ffffff00;}
+  </style>
+{% endblock %}
+{% block body %}
+    <header><img alt="{{ product.name }} Logo" src="{{ asset('products/'~product.id~'/3party-logo.png', 'assets') }}" height="87px"></header>
+    <div class="top" style="background-image: url('{{ asset('products/'~product.id~'/3party-slider.png', 'assets') }}'); background-repeat: no-repeat;">
+      <div class="container">
+          <div class="row">
+              <div class="col-12 col-md-4"><img class="/img-res" src="{{ asset('products/'~product.id~'/3party-producto.png', 'assets') }}" style="max-width:80%" ></div>
+              <div class="col-12 col-md-8">
+                  <div class="tableor">
+                    <ul class="list">
+                      <h4 style="color:black; background: white; padding: 15px; margin: 0 0 10px 0;">{{ product|resourceText('feature1')}}</h4>
+                      <li>{{ product|resourceText('feature2')}}</li>
+                      <li>{{ product|resourceText('feature3')}}</li>
+                      <li>{{ product|resourceText('feature4')}}</li>
+                    </ul>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+      <h2 class="text-center" style="margin-bottom:5px; font-size:25px;">{{ template|templateText('specialOffer')}}</h2>
+      <h2 class="text-center" style="margin-bottom:5px; font-size: 20px;">{{ template|templateText('offer')|replace({'%product%': product.name, '%price1%': (product.matchedPrice(1).value * 2 )~' '~product.matchedPrice(1).currency, '%price_unit%': product.matchedPrice(1).value ~' '~product.matchedPrice(1).currency})|raw}}</h2>
+      <h2 class="text-center" style="font-size:16px;"><u><b style="color: red;">{{ template|templateText('atention')}}</b>: {{ template|templateText('suboffer')|replace({'%date%': '<span class="date-offer"></span>'})|raw }}. </u></h2>
+      <div class="row">
+      {% include 'store/includes/embedFormCollapse.html.twig' %}
+      <div class="col-12 col-md-5">
+        <div class="text-center box">
+          <div class="fixed">
+            <h5>{{ template|templateText('validOffer')|replace({'%date%': '<span class="date-offer"></span>'})|raw}}</h5>
+          </div>
+          <hr class="puntos">
+          <div class="row">
+            <div class="col-12 col-md-6"><img src="{{ asset('products/'~product.id~'/3party-producto.png', 'assets') }}" style="width:200px;"></div>
+            <div class="col-12 col-md-6">
+              <p class="text1">{{ template|templateText('limited')}}</p>
+              <p class="text2">{{ template|templateText('leftCounter')|replace({'%number%':random(30) + 2})|raw }}</p>
+            </div>
+          </div>
+          <small class="alert-primary"><strong> {{ random(100) + 2 }} {{ template|templateText('watchingNow') }}</strong></small></div>
+        <div class="box">
+          <img src="{{ asset('templates/'~template.id~'/3party-securepayment.png', 'assets') }}" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    </div><!-- #container -->
+  <div style="min-height:40px;" class="clear"></div>
+  {% include 'store/includes/footer.html.twig' %}
+  <div id="header-wrap">
+    <div class="container clearfix text-center">
+      {{ template|templateText('discountBar')|raw }}
+    </div>
+  </div>
+{% endblock %}
+{% block javascripts%}
+  <script type="text/javascript" src="{{ asset('templates/'~template.id~'/js-combined.min.js', 'assets') }}"></script>
+  <script type="text/javascript" src="{{ asset('templates/'~template.id~'/formutils.js', 'assets') }}"></script>
+  <script>
+    {% include 'store/includes/embedFormCollapse.js.twig'  %}
+    $(document).ready(function() {
+
+      $(".date-offer").html(moment().locale(window.navigator.language).add(1, 'h').format('L'));
+      var timer = new Timer();
+      timer.start({countdown: true, startValues: {minutes:30, seconds: 30}});
+      $('.crono').html(timer.getTimeValues().toString());
+      timer.addEventListener('secondsUpdated', function (e) {
+        $('.crono').html(timer.getTimeValues().toString());
+      });
+    });
+  </script>
+{% endblock %}

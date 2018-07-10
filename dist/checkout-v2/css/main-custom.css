@@ -1,0 +1,42 @@
+:root {
+  /* COLORS */
+  /* (colors) common */
+  --color-success: #98c646;
+  --color-danger: tomato;
+  /* (colors) Backgrounds */
+  --color-bg-body: #f6f6f6;
+  --color-bg-wrapper: #f6f6f6;
+  --color-bg-header: white;
+  --color-hero-bg-claim: rgba(221,221,221,0.6);
+  --color-bg-card: white;
+  --color-bg-card-header: white;
+  --color-bg-card-highlight: gold;
+  --color-bg-input: white;
+  --color-bg-counter: rgba(152,198,70,.9); /* same green as "success" */
+  --color-bg-selection: #f6f6f6;
+  /* (colors) Text & Copies */
+  --color-font-main: #222222;
+  --color-hero-font-claim: #222222;
+  --color-text-selection: #333333;
+  --color-font-card-highlight: maroon;
+  --color-font-label: #777777;
+  --color-font-input: #222222;
+  --color-font-btn: white;
+  /* FONTS */
+  --font-family-main: Verdana, Geneva, sans-serif;
+  --font-family-titles: Helvetica, Geneva, sans-serif;
+  /* SIZES */
+  --logo-height-header: 85px;
+  --product-width-hero: 80%;
+  /* RADIUS */
+  --border-main: 1px solid #eeeeee;
+  --border-radius-main: 0;
+  --border-radius-input: 1px;
+  --border-radius-btn: 3px;
+  --border-radius-box: 1px;
+  --border-input: 1px solid rgba(0,0,0,.15);
+}
+
+.th-card-header {
+  border-bottom: none;
+}
